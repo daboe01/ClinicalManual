@@ -1,0 +1,262 @@
+\documentclass[11pt,oneside]{scrbook}
+ \usepackage[ngerman]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{supertabular}
+\usepackage{graphicx}
+%\usepackage{flafter}
+\usepackage{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+\usepackage{rotating}
+\usepackage[final]{pdfpages}
+%\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{supertabular}
+
+
+%\setcounter{tocdepth}{3}
+%\setcounter{secnumdepth}{3}
+%\lstset{language=Perl}
+\lstset{tabsize=2}
+\lstset{frame=plain}
+
+\setcounter{tocdepth}{1}
+
+\begin{document}
+{
+\centering
+\includegraphics[scale=0.2]{figs/logo.PNG}
+
+~\\ 
+
+{\noindent \huge \bf eTrialJoe --- Trials in a box\\~\\}
+{\noindent \large \bf Clinical trials made easy\\~\\}
+{\noindent   Daniel Böhringer}
+
+}
+\tableofcontents
+\newpage
+
+\chapter{Einleitung}
+\section{Ziele und Einsatzgebiete des Programmes}
+Das Programm soll den direkten und uneingeschränkten Zugriff auf alle zur Durchführung einer klinischen Studie erforderlichen Informationen ermöglichen. Dabei sollen redundante Dateneingaben konsequent vermieden werden (beispielsweise Visitentermine in einen Übersichtskalender, auf Merkblätter, auf Fahrtkostenabrechnungen und auf Sponsorrechnungen, 'don't repeat yourself'). Schlussendlich  soll auch die Quelldatendokumentation erleichtert werden.
+
+
+Durch die Realisation des Programmes als Web-Anwendung ist es von jedem Bildschirmarbeitsplatz  ohne Softwareinstallation verfügbar. Das Programm läuft in allen aktuellen Browsern (Safari, Chrome, Firefox und Internet Explorer).
+Das leistungsstarke Framework Cappuccino (www.cappuccino.org) ermöglicht dabei alle Funktionen  klassischer Computerprogramme, wie z.B. Tastatursteuerung, Copy/Paste sowie Undo und Redo.
+
+\section{Grundlegende Bedinungskonzepte}
+\label{ui-concepts}
+Ein zentrales Element in der Benutzeroberfläche ist das so genannte {\it TableView} (Abbildung \ref{fig:tableView}). Die Zeilen einer solchen Tabelle können selektiert sein und sind dann invertiert (weiße Schrift auf dunklem Hintergrund). Eine Zeile wird mit einem einem einfachen Mausklick selektiert. In diesem Fall wird die vorherige Selektion annulliert. Ist während des Mausklicks die Shift- bzw. Kommando-Taste gedrückt, wird die  vorhandene Selektion nicht annuliert, sondern die angeklickte Zeile zusätzlich markiert. Mit gedrückter Kommando-Taste kann eine selektierte Zeile auch gezielt deselektiert und die restliche Selektion  erhalten werden. Die Selektion ist Grundlage für Aktionen aus dem 'ButtonBar' unterhalb der Tabelle (Abbildung \ref{fig:buttonBar}). Der Minus-Knopf löscht die selektierten Zeilen, der Plus-Knopf generiert eine neue Zeile. Über den 'Zahnrad'-Knopf sind weitere Aktionen auf die selektieren Zeilen zugänglich. Ggf. sind zusätzlch Aktionsknöpfe mit Piktogrammen neben dem Zahnradmenü aufgereiht. Eine Kurzbeschreibung ('Tool tip') dieser Aktionen erscheint wenn der Mauszeiger eine kurze Zeit über den Knopf positioniert wird. Endet der 'Tool tip' mit drei Punkten, erfolgt nach dem Drücken der Schaltfläche noch eine Rückfrage.
+
+Ein Klick auf die Tabellenüberschrift sortiert die Tabelle nach der angeklickten Spalte. Spalten lassen sich durch klicken und ziehen umsortieren. Die Breite von Tabellenspalten lässt sich durch Ziehen des Spaltenzwischenraumes anpassen. Diese Änderungen werden lokal gespeichert und bei einem neuen Programmaufruf wiederhergestellt.
+In der Regel ermöglicht ein Doppelklick auf das TableView das Bearbeiten der angeklickten Zelle. Ggf. öffnen sich spezifische Eingabehilfen wie ein Mini-Kalender.
+
+
+\chapter{Studienübersicht}
+Die Studienübersicht befindet sich in der linken Spalte der Benutzeroberfläche (Abbildung \ref{fig:uebersicht}). Die Breite der linken Spalte lässt sich durch Ziehen der dünnen schwarzen Trennlinie rechts neben dem TableView (dauerhaft) anpassen. Neben Studientitel und zugewiesener Arbeitsgruppe findet sich der momentane Stand im 'Lebenszyklus' der Studie, die Studienphase sowie der Sponsor in der Tabelle. Nur der Studientitel ist über Doppelklick direkt editierbar. Der Studienstand ermittelt sich automatisch aus Angaben im Bereich 'Zeitereignisse' (s. Kapitel \ref{section:zyklus}). Die  Studienphase und der Sponsor werden  automatisch den entsprechenden Angaben der strukturierten Datenablage entnommen, und müssen ggf. an dieser Stelle verändert werden (s. Kapitel xx).
+
+Über der Studienübersicht befindet sich ein Suchfeld, dass während  der Eingabe kontinuierlich die Studienliste auf die Suchtreffer reduziert. Dabei werden  neben dem Titel der Studie auch alle Felder der strukturierten Datenablage und alle Namen der eingeschlossenen Patienten durchsucht.
+
+Die selektierte Studie kann über den Minus-Knopf des ButtonBars unter der Studienliste gelöscht werden. Über das Zahnradmenü lassen sich ausgefüllte Formulare für die selektierte Studie abrufen  (momentan nur Drittmittelanzeige und allgemeines Vertragsanschreiben).
+
+Der 'Reload-Knopf' frischt die Studientabelle auf. Dies ist insbesondere nach Änderungen in den Zeitereignissen sinnvoll, die den Studienstatus beeinflussen. Der Download Knopf lädt eine Excel-Tabelle mit allen sichtbaren Studien herunter. Der Play-Knopf öffnet eine eingegrenzte Eingabemaske auf die selektierte Studie.
+
+\section{Neue Studie anlegen und konfigurieren}
+Eine neue Studie wird auf den Plus-Knopf des ButtonBars unter der Studienliste generiert. Die Studie wird dabei automatisch der ersten Arbeitsgruppe des angemeldeten Benutzers zugeordnet. Direkt nach dem Anlegen wird  der Eingabefokus automatisch auf den Namen der Studie in die  Tabelle bewegt, sodass der gewünschte Name eingegeben werden. Im Anschluss lässt sich die Studie über den 'Konfiguationsknopf'  konfigurieren, der ein Fenster für die Konfiguration der aktuell markierten Studie (Abbildung xx).
+
+\subsection{Grundeinstellungen}
+\label{chap:config}
+In der ersten Spalte des Konfigurationsfensters lassen sich unter der Überschrift 'Basic data' der Studienname und die Gruppenzugehärigkeit ändern. Darunter werden im TableView 'Status values' die Zustände verwaltet, die ein Studienteilnehmer durchlaufen kann. Zu jedem Zustand wird in der Spalte 'alerting' mit einer '1' festgelegt, dass Patienten mit diesem Zustand  kontinuierlich überwacht werden sollen (z.B. Meldung aller Klinikskontakte via E-Mail). Mit einer '0' wird diese Überwachung unterdrückt. Diese Einstellung ist beispielsweise für 'Screen-Failures' oder nach Studienende sinnvoll, um überflüssige Benachrichtigungen zu vermeiden. Die  E-Mail-Adressen sind im Administrationsbereich hinterlegt (Kapitel xx).
+
+\subsection{Visiten}
+In der zweiten Rubrik 'Visits' werden die Studienvisiten verwaltet. Jede Visite wird mit dem Plus-Knopf generiert und muss dann geeignet benannt werden. Das jeweilige Visitenintervall wird in die Spalte 'interval' eingetragen. Die Intervalle müssen als Zahl mit Einheit eingegeben werden, z.B.  '23 days', '6 mons' oder '2 years'. Toleranzen für den Visitentermin lassen sich über die beiden  Spalten 'obergrenze' und 'untergrenze' in gleicher weise definieren. Die jeweilige Bezugsvisite für das Visitenintervall muss über die Spalte 'reference visit' spezifiziert werden. Die einzige Ausnahme bildet die  Referenzvisite (in der Regel die Studieneinschlussvisite). Die Referenzvisite lässt sich ggf. über das Zahnrad-Menü 'unset reference visit'  wieder entfernen. Die so markierte Visite wird dadurch  zur Referenzvisite.  Die Visiten lassen sich  über die Spalte 'ordering' explizit sortieren. Diese Spalte kann mit dem Sortieren-Knopf automatisch belegt werden. In der Spalte 'reimbursement' werden die ausgehandelten Visitenvergütungen (in Euro) als einheitslose Zahlen hinterlegt. Diese sind Grundlage für die automatisierte Rechnungserstellung (Kapitel xx). Die  Kosten einer Visite lassen sich ggf. vorab über die Visitenprozeduren im Sinne eines Kostenvoranschlages für den Sponsor kalkulieren (s.u.). In der Spalte 'booking' lassen sich die Namen von 'DocsCal'-Sprechstunden hinterlegen, in die Patienten beim Buchen dieser Visite zusätzlich zur Studiensprechstunde gebucht werden (beispiel: Fluoreszenangiographie). Die Spallte 'comment' nimmt Kommentare auf, die beim Buchen der Termine eingeblendet werden (Abbildung xx).
+
+Zu jeder Visite lassen sich in der Rubrik 'Procedures' des Konfigurationsfensters die zugehörigen Prozeduren hinterlegen. Prozeduren lassen sich über den Plus-Knopf hinzufügen. Der Eingabefokus springt dann auf die  neue Prozedur und diese kann über eine ComboBox spezifiziert werden.  Zu jeder Prozedur ist in der Spalte 'base costs' ein Preisvorschlag hinterlegt ('Hauskatalog', Konfiguationsbereich, Kapitel xx).  Es muss in der Spalte 'actual costs' ein konkreter Preis festgelegt werden (beispielsweise durch Übernahme des 'base costs'-Wertes). Das bisherige Preisspektrum für diese Prozedur ist in den Spalten 'min' (billigster Preis), 'avg' (durchschnittlicher Preis in allen bisherigen Studien mit dieser Prozedur) und 'max' (bislang höchster ausgehandelter Preis) sichtbar.
+Die Spalten 'ordering' und 'parameter' sind der Gestaltung des elektronischen Worksheets zu dieser Visite vorbehalten (Kapitel xx). % fixme: what is 'parameter' used for?
+
+In der letzten Rubrik 'Personnel' lassen sich jeder Prozedur eine oder mehrere zuständige Personen zuordnen. Die Angabe mehrerer Personen ist dabei als Vertreterkette zu verstehen. Die spezifische Zuordnung von Personen zu Prozeduren ermöglicht zum einen einen personalisierten Kalender (Kapitel xx) als auch eine Konsistenzprüfung bei der Terminbuchung (Kapitel xx) unter Rückgriff auf den Abwesenheitskalender (Kapitel xx).  Sind alle erforderlichen Personen für die Prozeduren am  avisierten Visitentermin  abwesend, erscheint beim Buchen eine entsprechende   Warnmeldung.
+
+\section{Strukturierte Datenablage}
+Die strukturierte Datenablage befindet sich in der Registerkarte 'Eigenschaften'. Sie ermöglicht die  Erfassung frei definierbarer Eigenschaften  für jede Studie am Prüfzentrum (z.B. Titel, Name des klinischen Monitors usw.). Dabei werden diese Eigenschaften im Sinne eines 'Steckbriefes' stets in der gleichen  Reihenfolge angezeigt. Dies ermöglicht zum das schnelle Auffinden der gesuchten Information, zum anderen werden ausgewählte Datenfelder zum Ausfüllen von hinterlegten Formularen (z.B. Name des Sponsors für die Rechnugserstellung) verwendet. Einige Felder lassen sich direkt über den 'Play'-Knopf der ButtonBar öffnen. In Tabelle \ref{tab:playbutton} findet sich eine Übersicht  dieser Felder.
+
+\begin{table}[htdp]
+\caption{Übersicht über die Datenfelder, die sich mit dem 'Play'-Knopf der ButtonBar spezifisch öffnen lassen}
+\begin{center}
+\begin{tabular}{p{4cm}p{8cm}}
+Feld & Funktion\\\hline
+Monitor Mail  & Bereitet eine Email an den Monitor im EMail-Programm vor\\
+NCT-Nummer & Zeigt die registrierten Informationen aus clinicaltrials.gov an\\
+Drittmittelnummer & Öffnet die Kontoauszüge dieses Kontos\\
+eCRF und IWRS & Öffnet die jeweils hinterlegte URL\\
+Serienbrief & Generiert eine PDF-Datei einem Serienbrief (\LaTeX-Format) für alle Studienteilnehmer\\
+\end{tabular}
+\end{center}
+\label{tab:playbutton}
+\end{table}%
+ 
+Mit dem Anlegen einer Studie (Kapitel xx) wird eine standardisierte Auswahl aller Datenfelder autmatisch angelegt. Werte lassen sich über einen Doppelklick auf die Spalte 'val' eingeben bzw. editieren. Wenn längere Texte erfasst werden müssen, kann ein mehrzeiliges Eingabefenster über den Knopf 'Open multiline editor' angefordert werden. Weitere Felder lassen sich über den Plus-Knopf der ButtonBar ergänzen. Es öffnet sich dann eine Auswahlliste, in der eine Mehrfachauswahl möglich ist, sodass mit einer Aktion mehrere Felder hinzufgefügt werden können (Abbildung xx). In der Auswahlliste lässt sich  über die Spalte 'order' die Reihenfolge der Felder in der strukturierten Datenablage festlegen. Die Spalte 'type' definiert die automatisch angelegten Felder (Wert '1'). In der Spalte 'default' kann ggf. ein Standardwert vorgegeben werden, der bei Anlage des Datenfeldes vorgelegt wird.  Über die Aktion das Zahnrad-Menüs der ButtonBar 'add all standard fields' lassen sich für die aktuell markierte Studie alle   Standardfelder erzeugen. Dies ist zum Beispiel sinnvoll, wenn  neue Standardfelder nach dem Anlegen der Studie hinzugefügt wurden. Die  Zahnrad-Menü-Aktion  'Open annotations...' öffnet ein  Eingabefenster, in dem für jedes Datenfeld beliebige Schlüssel-Werte Paare  abgelegt werden können (Abbildung xx). Diese Daten werden für jeden Benutzer getrennt verwaltet und eignen sich daher  zur Ablage von Zugangsdaten. So können z.B. in dem Feld der URL des eCRF Benutzername und Password in der Annotations-Tabelle hinterlegt werden. Auf diese Weise stehen die Zugangsdaten sicher und ortsunabhängig jederzeit zur Verfügung. 
+
+\subsection{Volltextsuche}
+Das Suchfeld über der Studientabelle ermöglicht das Durchsuchen der Studien nach Stichwörtern.  Mehrere Suchbegriffe werden mit dem logischen 'und' verknüpft. Groß-/ Kleinschreibung wird ignoriert. Die Suche erfolgt in Echtzeit während der Eingabe. Nur  auf die Suchbegriffe zutreffende Studien werden angezeigt. Die Suchbegriffe lassen sich ggf. mit einem Click auf das kleine 'X'  rechts im Suchfeld (Abbildung xx) eliminieren, um alle Studien wieder anzuzeigen. Bei der Suche werden der Studientitel, alle Felder der strukturierten Datenablage, die Zeitereignisse und das Subject log (Patientennamen / PIZ) berücksichtigt. % fixme: <!> dokumente durchsuchen?!.
+
+\subsection{Formulardruck}
+Die Felder der strukturierten Datenablage der aktuell selektierten Studie können in PDF-Formulare und beliebige \LaTeX Vorlagen eingedruckt werden. Momentan sind diesbezüglich die Dritmittelanzeige sowie ein Anschreiben für den Vertragsumlauf vorbereitet. Beide Formulare lassen sich über das Zahnrad-Menü der ButtonBar unter der Studientabelle abrufen. Weitere  \LaTeX Vorlagen können hinterlegt werden (Anhang xx). % fixme: <!> das zahnradmenue sollte sich eigentlich automatisch fuellen, sodass ein aufkopieren einer neuen vorlage ausreichen wuerde.
+
+
+\chapter{Dokumentenablage}
+Die Dokumentenablage befindet sich in der Registerkarte 'Dokumente'. Sie nimmt  beliebige Dokumente  auf. Die Ablage erfolgt für jede Studie getrennt in ca. 20 vorgefertigten Rubriken (z.B. Studienprotokoll, Ethik, Patienteninfo...). Diese Rubriken entsprechen den Ordnern im Dateisystem und ermöglichen das gezieltere Auffinden der gesuchten Information.  Die Dokumente können über den 'down\-load'-Knopf jederzeit zum Ausdrucken oder zur Ansicht auf die lokale Festplatte kopiert werden (i.d.R. werden PDF und Bilddokumente direkt im Web-Browser angezeigt).
+
+Dateien werden über den Plus-Knopf der Button-Bar hinzufügt. Dafür öffnet sich das Upload-Fenster (Abbildung xx). Dateien werden der aktuell markierten Studie entweder via Drag-and-Drop in dieses Fenster, oder über den  'klassischen' Auswahldialog des Betriebssystems hinzugefügt. Letzterer lässt sich über den 'Add' Knopf öffnen. Nach dem Upload sind die Dateien  der Rubrike 'Unclassified' zugeordnet. Über das Popup-Menü in der Spalte 'verschieben in' lässt sich das Dokument der geeigneten Rubrik zuordnen. Durch einen Doppelklick auf den Dateinamen (Spalte 'name') lässt sich der Dateiname editieren. Die Spalte 'date' zeigt das letzte Änderungsdatum der Datei zum Zeitpunkt des Hochladens.
+
+Über den Minus-Knopf lassen sich Dokumente nach einer Sicherheitsrückfrage rückstandsfrei löschen. Rubriken ohne zugeordnete Dateien werden nicht angezeigt, sodass ausschließlich Rubriken mit zugeordneten Dateien in der Spalte 'folder' gelistet sind. Diese Spalte lässt sich ggf. durch Betätigen des Reload-Knopfes aktualisieren (beispielsweise nach einem Upload oder nach einer Löschung).
+
+\chapter{Rechnungswesen}
+\label{chap:rechnung}
+Das Rechungswesen befindet sich in der Registerkarte 'Rechungen'. Alle Rechnungen der aktuell selektierten Studie sind in dem TableView gelistet. In der Spalte 'creation date' befindet sich das Erzeugungsdatum der Rechnung. Das Fälligkeitsdatum und ggf. das Datum des Zahlungseinganges finden sich in den beiden Spalten 'due date' und 'date payed'. Diese beiden Spalten ermöglichen  die Funktion 'Download Inkassolist' im Hauptmenü 'Controlling'. Diese lädt eine Excel-Tabelle mit allen überfälligen Rechnungen herunter. Die Spalte 'EUR' enthält den Rechungsbetrag in Euro und die Spalte 'comment' einen beliebigen Kommentar zu dieser Rechnung. Die Spalte 'visits ids' beinhaltet eine kommaseparierte Liste der ids aller inkludierten Visiten. Damit wird die Doppelabrechnung von Studienvisiten nachhaltig unterbunden.
+
+Mit dem Plus-Knopf der ButtonBar wird eine einfache leere Rechnung angelegt. Dies eignet sich beispielsweise zur Abrechnung von fixen 'Setup-Fees' u.ä. Die Abrechnung einzelner Visiten ist in den folgenden Kapiteln beschrieben. Der Minus-Knopf löscht die selektierte Rechnung nach Rückfrage. Der Download-Knopf generiert die Rechnung im Excel-Format und lädt diese zum Ausdrucken herunter.  
+
+\section{Gesamtabrechnung nach Abschluss der Studie}
+Die Aktion 'Ausstehende Visiten abrechnen' aus dem Zahnradmenü erzeugt eine neue Rechnung über alle Visitentermine der aktuell selektierten Studie, die bislang noch nicht abgerechnet worden sind. Es werden dabei aber nur Visitentermine aus der Vergangenheit berücksichtigt. In die Rechungserstellung fließen die folgenden Felder aus der strukturierten Datenablage ein:  Name der Studie und Sponsoranschrift , 'Overhead inclusive J/N', 'Umsatzsteuer J/N', 'Drittmittelnummer' und 'Ust-ID'.
+
+\section{Gesamtabrechnung pro Patient}
+Sollen einzelne Patienten gezielt abgerechnet werden, müssen diese in der Registerkarte 'Patienten/Visits' (Kapitel xx) selektiert werden (eine Mehrfachselektion ist z.B. mit gedrückter Shift-Taste möglich). Anschließend wird die entsprechende Rechnung über die Aktion 'Selektierte Patienten komplett abrechnen' aus dem  Zahnrad-Menü der ButtonBar des Patienten-TableViews generiert.
+
+\section{Abrechnung einzelner Visiten}
+Häufig werden Studienvisiten nach der Monitorierung gezielt abgerechnet. Dies lässt sich über die Aktion 'Selektierte Patienten partiell abrechnen' im Zahnradmenü der Registerkarte 'Patienten/Visits' (Kapitel xx) erreichen. Es öffnet sich das zweispaltige Fenster 'Einzelvisiten abrechnen' (Abbildung xx). In der linken Spalte sind alle Rechnungen der aktuellen Studie gelistet.  In der linken Spalte sind alle durchgeführten Visiten des aktuellen Patienten aufgelistet. Nun muss in der rechten Spalte Die Rechnung, über die die Visiten abgerechnet werden sollen, selektiert werden.  Über die Plus-Taste lässt sich ggf. dafür eine neue 'leere' Rechnung erzeugen. Als nächstes müssen die abzurechnenden Visiten markiert werden (mit gedrückter Maustaste über die Visiten 'ziehen' bzw. mit gedrückter Shift- bzw. Kommando-Taste mehrfach klicken). Abschließend werden diese Visiten dann über die Zahnrad-Aktion 'Selektierte abrechnen' der ButtonBar unter dem Visiten-TableView des Fensters 'Einzelvisiten abrechnen' in die selektierte Rechnung einbezogen.
+
+\section{Fahrtkostenabwicklung}
+Fahrtkosten werden üblicherweise von dem Prüfzentrum vorgestreckt. Über  die Aktion 'Fahrtkosten erstatten' im Zahnradmenü der Registerkarte 'Patienten/Visits' (Kapitel xx) lässt sich eine Auszahlanordnung für die Fahrtkosten einzelner Visiten generieren und die Auszahlung zwecks Rückvergütung durch den Sponsor dokumentieren. Es öffnet sich ein Fenster mit dem Titel 'Fahrtkostenerstattung' (Abbildung xx). In die Felder 'IBAN' und 'BIC' lassen sich ggf. jeweils die 'alte' Kontonummer und Bankleitzahl eintragen. Über die Zahnrad-Aktion 'Validate IBAN' werden diese in IBAN und BIC umgerechnet. Die Bank wird über eine lokale Datenbank automatisch aus der IBAN abgeleitet. War bereits eine IBAN eingetragen, erfolgt eine Prüfung IBAN Prüfziffer, und es wird bei Inkonsistenzen ggf. eine Warnmeldung ausgegeben.  In das Feld 'Travel distance' wird bereits mit dem Öffnen des Fensters  die Anreisedistanz mittels PKW eingetragen (Hin- und Rückreise gemäß Google-Maps-API). Aus Datenschutzgründen wird dabei nicht die volle Adressinformation übermittelt, sodass die Distanz geringfügig von einer manuellen Suche in 'Google-Maps' abweichen kann. Die Fahrtkosten werden durch eine Multiplikation der Anreisedistanz mit der vertraglich vereinbarten Kilometerpauschale ermittelt (Feld '' in der strukturierten Datenablage, Kapitel xx).
+
+In der Spalte 'date' findet sich das Visitendatum. In der Spalte 'add. costs' lassen sich ggf. Zusatzkosten zu dem o.g. Kilometergeld (z.B. Parkgebühren) für die jeweilige Visite geltend machen. In die Spalte 'alt. costs' kann ggf. ein alternativer Festpreis für die An- und Abreise zu dieser Visite festgelegt werden (beispielsweise Taxikosten oder Preis des Bahntickets). Die Spalte 'date reimbursed' nimmt das Abrechnungsdatum auf. Dieses merkt den Fahrtkostenbetrag schlussendlich für die spätere Rückvergütung durch den Sponsor vor und wird über die Zahnradaktion 'Als abgerechnet markieren' automatisch eingetragen. Die Spalte Kommentar nimmt ggf. einen begründen Text auf, der  auf das Anordnungsformular übernommen wird.
+
+\chapter{Termine und Ereignisse}
+Das Zeitereignisse der aktuell selektierten Studie werden  unter der Registerkarte 'Zeitereignisse' verwaltet. Ein neues Ereignis kann über den Plus-Knopf der Button-Bar  angelegt werden.   Danach muss über das Popup der Spalte 'name' die Bedeutung des Ereignisses definiert werden.  Start- und Enddatum können über einen Doppelklick in die Spalten 'start' und 'end' eingegeben oder über einen Minikalender ausgewählt werden. Für Ereignisse, die noch nicht abgeschlossen bzw. erledigt sind, kann das Enddatum auch ausgelassen werden. Die Spalte 'responsible' nimmt ggf. die zuständige Person auf, und in der Spalte 'comment' kann erklärender Freitext abgelegt werden.
+\section{Aufgabenlisten}
+Die Zeitereignisse dienen zum einen dazu, Meilensteine oder Treffen (z.B. Monitorierung oder Initiierungen) in den Arbeitskalender einzutragen. Zeitereignisse können zum anderen als Aufgabenlisten fungieren (z.B. Schulungen für einzelne Personen). In diesem Fall darf  erst nach Absolvierung der Aufgabe ein geeignetes Datum in die Spalte 'end' eingetragen werden. Über die Zahnradaktion 'Todo liste' lädt eine Excel-Tabelle mit allen nicht erledigten Aufgaben der aktuellen Studie herunter. Der Befehl 'Download Todo Liste'  aus dem 'Controlling'-Hauptmenü generiert eine Gesamtliste der noch nicht erledigten Aufgaben in allen Studien, die dem aktuellen Benutzer zugeordnet sind.
+
+\section{Studienzustand}
+\label{section:zyklus}
+Die Zeitereignisse definieren zudem indirekt den aktuellen Zustand im 'Lebenszyklus der Studie', der in der Spalte 'State' der linken Studienübersicht erscheint. Alle möglichen Zustände sind in Tabelle \ref{tab:trialstates} zusammen gefasst.
+
+\begin{table}[htdp]
+\caption{Übersicht über alle Zustände, die jede Studie über die Zeit durchläuft}
+\begin{center}
+\begin{tabular}{p{4cm}p{8cm}}
+Name & Bedeutung \\\hline
+Upcoming  & Das Anfangsdatum des Ereignisses Gesamtlaufzeit liegt in der Zukunft.\\
+Startup & Das Anfangsdatum des Ereignisses Gesamtlaufzeit wurde bereits überschritten, das Anfangsdatum des Ereignisses Rekrutierung liegt aber noch in der Zukunft.\\
+Recruiting & Anfangsdatum des Ereignisses Rekrutierung wurde überschritten und das Enddatum noch nicht erreicht.\\
+Follow up & Das Enddatum des Ereignisses Rekrutierung wurde überschritten und das Enddatum des Ereignisses Gesamtlaufzeit wurde noch nicht erreicht.\\
+Finished & Das Enddatum des Ereignisses Gesamtlaufzeit wurde überschritten.\\
+Archived & Das Enddatum des Ereignisses Gesamtlaufzeit wurde überschritten und das Feld 'Aufbewahrung bis' wurde in der strukturierten Datenablage angelegt (Kapitel xx)\\
+\end{tabular}
+\end{center}
+\label{tab:trialstates}
+\end{table}
+
+\section{Arbeitskalender}
+Das Kalenderfenster öffnet sich über das 'Special'-Hauptmenü  (Abbildung xx). Es wird der aktuelle Monat angezeigt und der aktuelle Tag  gelb umrandet. Andere Jahre und Monate können über die beiden ersten Eingabefelder oberhalb des Kalenderbereiches ausgewählt werden.
+Studienvisiten sind in schwarzer, andere Ereignisse wie beispielsweise Monitorierungsvisiten, Teameetings (Kapitel xx) oder Personalabwesenheiten (Kapitel xx) in  grauer Schrift dargestellt. Termine mit Überschneidungen oder Konflikten sind mit einem Ausrufungszeichen in spitzen Klammern gekennzeichnet.
+
+ Die   Ereignisse können über das Ankreuzfeld 'Filter for me'  für  den aktuellen Benutzer gefiltert werden. Dies blendet alle Studienvisiten aus, bei denen der aktuelle Benutzer keiner Prozedur (Kapitel xx)  zugeordnet ist. Zusätzlich werden die Zeitereignisse, die explizit einer anderen Person zugewiesen sind nicht mehr angezeigt.  Der Kalender steht unter der URL /iCAL/{\it ldap} auch als iCAL feed zur Verfügung ({\it ldap}  muss selbstverständlich durch das eigene LDAP-Kürzel ersetzt werden ). Über die Parameter '?personalized=1' kann der Feed analog zum  Ankreuzfeld 'Filter for me' personalisiert werden. % stimmt der link?! parameter show end dokumentieren.
+Team meetings.
+
+
+
+
+
+\chapter{Patienten und Visiten}
+\section{Patienten}
+Die Liste der Studienpatienten bzw. das 'Subject identification log'   ist unter der Registerkarte 'Patienten/Visiten' angeordnet. Neue Patienten werden über den Plus-Knopf unter der Patiententabelle angelegt. Der Eingabefokus bewegt sich damit  direkt in das Feld für die 'Personenidentifikationsziffer' ('PIZ'). Nach Eingabe einer  PIZ werden mit dem Betätigen der Eingabetaste die Felder 'name', 'givenname' und 'birthdate' automatisch aus dem Klinik-Informationssystem übernommen. Auch die Anschrift ist hinterlegt (beispielsweise für die Serienbrieffunktion, \ref{tab:playbutton}).
+
+Die Spalte 'state' ermöglicht die Zuordnung eines vordefinierten Statuswertes (Studienkonfiguration, Kapitel \ref{chap:config}). Dadurch wird beispielsweise festgelegt, ob der Studienteilnehmer elektronisch 'überwacht' werden soll. In diesem Fall werden  E-Mails verschickt, wenn der Patient (auch ungeplant) im Klinikum vorstellig wird. Dies hilft beispielsweise dabei 'Severe adverse events'  fristgerecht zu melden. Die Spalten 'code1' und 'code2' nehmen ggf. studienspezifische Pseudonymisierungsdaten auf. In die Spalte 'comment' lässt sich ein beliebiger Text zu dem Patienten hinterlegen. Das ist beispielsweise sinnvoll, um den Grund für ein 'Screen-Failure' zu dokumentieren. Über den Download-Knopf in der ButtonBar lässt sich die Patientenliste als Excel-Datei herunterladen. In dieser Tabelle ist auch das Einfügedatum vermerkt. Diese Datei kann ggf. als 'Subject identification log' ausgedruckt oder in elektronische Formulare des Sponsors einkopiert werden. Nach Entfernen der Klarnamen lässt sich diese Tabelle  als Screening log verwenden.
+
+Über die Zahnradknopf-Aktion 'Brief an Hausarzt' wird ein Brief an den Hausarzt generiert, der über die Studienteilnahme des aktuellen Patienten informiert. Die  Zahnradaktionen zur Abrechnung sind in Kapitel \ref{chap:rechnung} beschrieben. Die Aktion 'Open DCV' öffnet die digitale Akte des aktuellen Patienten.
+
+\section{Visiten}
+Manuelle Eingabe, Intevalle durch datepicker unterstuetzt, Buchen ueber terminspalte, Warndreiecke in der terminspalte , reload button und warndreiecke in den visitenintervallen erklaeren. Open/print worksheet, alle visiten anlegen, unscheduled visit, dummy for booking. Leere intervalle-> referenzvisite nicht temriniert. reload button erklaeren. Terminüberschneidungen.
+
+\chapter{Hauptmenü}
+
+
+\chapter{Persönlicher Bereich}
+Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
+
+
+\chapter{Administrationbereich}
+Hier werden globale eigenschaften hinterlegt.
+\section{Benutzerverwaltung}
+Erklärung des Rechtekonzepts.
+Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer ist mindestens einer Arbeitsgruppe zugeordnet. Nur die Studien  der zugeordneten Arbeitsgruppen sind für den angemeldeten Benutzer sichtbar. Die Benutzerverwaltung und das Rechte\-konzept sind in Kapitel xx dargestellt.
+
+\section{Team Meetings}
+Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
+
+
+Erklärung der einzelnen Tabs.
+\section{Groupware features}
+
+\section{Prozedurenkatalog}
+Hauspreise, GoAE
+Verweis auf Anhang mit beispielcode. Dauer der prozedur in minuten..
+
+\begin{appendix}
+
+\chapter{Erstellung eigener Widgets}
+Klassenhierachie, SimpleWidget vs. Cappusance, Timer, Stopwatch.
+
+\begin{lstlisting}[caption=Complete source code of a minimalistic widget.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
+<?xml version="1.0"?>
+<!DOCTYPE gsmarkup>
+<gsmarkup>
+  <objects>
+   <window visible="NO">
+     <hbox id="widgets">
+           <label valign="center"> Haben sich SAEs ereignet?</label>
+           <popUpButton width="80" valueBinding="#CPOwner.value2">
+                <popUpButtonItem title="Ja" tag="1"/>
+                <popUpButtonItem title="Nein" tag="0"/>
+           </popUpButton>
+          <label valign="center"> Zeit </label>
+          <textField valueBinding="#CPOwner.value1" width="120" halign="min"/>
+          <button title="Notieren" target="#CPOwner" action="takeTime:"/>
+    </hbox>
+   </window>
+  </objects>
+  <connectors>
+     <outlet source="#CPOwner" target="widgets" label="_myView"/>
+  </connectors>
+</gsmarkup>}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Corresponding LaTeX template.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
+{{\bf<value2>} (0=Nein, 1=Ja). Beantwortet: {\bf<value1>}}
+\end{lstlisting}
+\chapter{Erstellung eigener Formulare}
+
+\chapter{Installationsanleitung}
+
+\begin{lstlisting}[caption=Installationsbefehle beispielhaft fuer MacOS X.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
+# the easiest way to get Postgres up and running on a mac is Postgres.app
+/Applications/Postgres.app/Contents/Versions/9.3/bin/createdb  aug_clinical
+/Applications/Postgres.app/Contents/Versions/9.3/bin/createuser postgres -s
+/Applications/Postgres.app/Contents/Versions/9.3/bin/createuser root -s
+cat sql_template.sql | /Applications/Postgres.app/Contents/Versions/9.3/bin/psql aug_clinical
+#
+# we need a current TeX distribution such as <https://tug.org/mactex/>
+# perl is already installed on linux and mac but we need quite a bunch of non-core perl modules
+sudo perl -MCPAN -e 'install ($_) for qw/Mojolicious Mojolicious::Plugin::Database Mojolicious::Plugin::RenderFile SQL::Abstract::More Apache::Session::File Spreadsheet::WriteExcel Spreadsheet::ParseExcel Business::IBAN DBD::Pg Date::ICal Data::ICal Data::ICal::Entry::TimeZone/'
+# now you can either call morbo backend.pl (testing server)
+# or launch hypnotoad backend.pl during system boot
+# locate your favourite web browser to http://localhost:3000/Frontend/index.html
+# (you may change the port either in backend.pl or from the command line)
+# the username is pi with no password
+# (passwords are not enforced unless you modify the helper LDAPChallenge with backend.pl appropriately)
+\end{lstlisting}
+
+\end{appendix}
+
+\end{document}
