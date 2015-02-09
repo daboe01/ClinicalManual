@@ -22,13 +22,16 @@
 \contentsline {chapter}{\numberline {6}Patienten und Visiten}{16}{chapter.6}
 \contentsline {section}{\numberline {\relax 6.1}Patienten}{16}{section.6.1}
 \contentsline {section}{\numberline {\relax 6.2}Visiten}{16}{section.6.2}
-\contentsline {chapter}{\numberline {7}Hauptmen\"u}{17}{chapter.7}
-\contentsline {chapter}{\numberline {8}Pers\"onlicher Bereich}{18}{chapter.8}
-\contentsline {chapter}{\numberline {9}Administrationbereich}{19}{chapter.9}
-\contentsline {section}{\numberline {\relax 9.1}Benutzerverwaltung}{19}{section.9.1}
-\contentsline {section}{\numberline {\relax 9.2}Team Meetings}{19}{section.9.2}
-\contentsline {section}{\numberline {\relax 9.3}Groupware features}{19}{section.9.3}
-\contentsline {section}{\numberline {\relax 9.4}Prozedurenkatalog}{19}{section.9.4}
-\contentsline {chapter}{\numberline {A}Erstellung eigener Widgets}{20}{appendix.A}
-\contentsline {chapter}{\numberline {B}Erstellung eigener Formulare}{21}{appendix.B}
-\contentsline {chapter}{\numberline {C}Installationsanleitung}{22}{appendix.C}
+\contentsline {chapter}{\numberline {7}Hauptmen\"u}{18}{chapter.7}
+\contentsline {section}{\numberline {\relax 7.1}Edit}{18}{section.7.1}
+\contentsline {section}{\numberline {\relax 7.2}Controlling}{18}{section.7.2}
+\contentsline {section}{\numberline {\relax 7.3}Special}{18}{section.7.3}
+\contentsline {chapter}{\numberline {8}Pers\"onlicher Bereich}{19}{chapter.8}
+\contentsline {chapter}{\numberline {9}Administrationbereich}{20}{chapter.9}
+\contentsline {section}{\numberline {\relax 9.1}Benutzerverwaltung}{20}{section.9.1}
+\contentsline {section}{\numberline {\relax 9.2}Team Meetings}{20}{section.9.2}
+\contentsline {section}{\numberline {\relax 9.3}Groupware features}{20}{section.9.3}
+\contentsline {section}{\numberline {\relax 9.4}Prozedurenkatalog}{20}{section.9.4}
+\contentsline {chapter}{\numberline {A}Erstellung eigener Widgets}{21}{appendix.A}
+\contentsline {chapter}{\numberline {B}Erstellung eigener Formulare}{22}{appendix.B}
+\contentsline {chapter}{\numberline {C}Installationsanleitung}{23}{appendix.C}

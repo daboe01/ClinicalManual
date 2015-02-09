@@ -177,9 +177,22 @@ Die Spalte 'state' ermöglicht die Zuordnung eines vordefinierten Statuswertes (S
 Über die Zahnradknopf-Aktion 'Brief an Hausarzt' wird ein Brief an den Hausarzt generiert, der über die Studienteilnahme des aktuellen Patienten informiert. Die  Zahnradaktionen zur Abrechnung sind in Kapitel \ref{chap:rechnung} beschrieben. Die Aktion 'Open DCV' öffnet die digitale Akte des aktuellen Patienten.
 
 \section{Visiten}
-Manuelle Eingabe, Intevalle durch datepicker unterstuetzt, Buchen ueber terminspalte, Warndreiecke in der terminspalte , reload button und warndreiecke in den visitenintervallen erklaeren. Open/print worksheet, alle visiten anlegen, unscheduled visit, dummy for booking. Leere intervalle-> referenzvisite nicht temriniert. reload button erklaeren. Terminüberschneidungen.
+Die Visiten des aktuellen Patienten befinden sich in der Tabelle rechts daneben. Die Visiten werden mit der Neueingabe jedes Patienten automatisch angelegt. Über den Plus-Knopf können ggf. zusätzliche Visiten angelegt werden (beispielsweise im Falle ungeplanter Kontrollen). Nicht mehr benötigte Visiten können über den Minus-Knopf gelöscht werden. Über die Zahnradknopf-Aktion 'Create all visits' lassen sich  alle momentan noch fehlenden Visiten ergänzen. Dies ist beispielsweise sinnvoll, wenn seit Anlage des Patienten neue Studienvisiten in der Studienkonfigurationsmaske (Kapitel  \ref{chap:config}) eränzt wurden. Die Visite wird über die Spalte 'visit' über ein Popup-Menü spezifiziert.
+
+Die Spalte 'date' nimmt das Datum der Visite auf. Dieses ist für die Referenzvisite mit dem Tagesdatum bei Neuanlage vorbelegt. Über einen Doppelklick kann das Datum manuell editiert bzw. aus einem Popup-Mini-Kalender ausgewählt werden. Dabei sind die Dati außerhalb der Visitenfenster ausgegraut. Die Datumsgrenzen des Visitenfenster sind in den Spalten 'lower' und 'upper' angezeigt. Die Spalte 'center' zeigt den optimalen Termin. Diese Datumswerte errechnen sich aus dem Einschlussdatum, also dem Datumswert der Referenzvisite. Mit Änderung dieses Datums bzw. Änderung der Visitenintervalle (Kapitel  \ref{chap:config}) lassen sich die Visitenfenster über den  'Reload'-Knopf aus der ButtonBar neu berechnen. Sind die Datumswerte für die Visitenfenster leer, ist in der Regel die Referenzvisite noch nicht terminiert.
+
+Dabei erfolgt im Hintergrund zusätzlich ein Abgleich mit den Terminen der zugehörigen Sprechstunde (Einstellung s. Kapitel xx). Ist innerhalb eines Visitenfensters kein buchbarer Terminen mehr vorhanden, wird in der Spalte 'MS' ein Warndreieck eingeblendet (dies kann bei hoher Auslastung des Buchungssystems des Klinikums ggf. einige Sekunden dauern). Diese Funktion ist beispielsweise für engmaschig getaktete Studien mit geringen Toleranzen hilfreich um zu entscheiden, ob in Abhängigkeit vom Einschlussdatum Visitentermine auf das Wochenende fallen würden.
+
+In die Spalte 'comment' wird das Kommentarfeld zu dieser Visite aus dem Konfigurationsfenster eingeblendet. Alle in der Visitentabelle dargestellten Informationen lassen sich über den Drucken-Knopf auf einen Terminzettel drucken, der dem Patienten ausgehändigt werden kann.
+
+Die Patienten können über die Tabelle rechts neben den Visiten mittels Doppelklick in das Order-Entry-System des Klinikums eingebucht werden. Studien- und Visitenname werden als Buchungstext vorgeschlagen und können ggf. ergänzt werden. Mit dem Knopf-Buchen erfolgt die Buchung, was  ggf. einige Sekunden dauern kann (erkennbar an dem Drehrad). Bei erfolgreicher Buchung wird der gebuchte Termin für die selektierte Visite  eingetragen. Dann erfolgt im Hintergrund eine Überprüfung dieser Buchung auf etwaige Terminüberschneidungen. Dafür werden die Terminkalender aller für die Abwicklung der Visitenprozeduren Personen auf Grundlage der hinterlegten Durchführungszeiträume überprüft. Überschneidet sich für mindestens eine Person der aktuelle Termin mit bereits gebi
+
+% Open/print worksheet, , dummy for booking. überschneidungen.
 
 \chapter{Hauptmenü}
+\section{Edit}
+\section{Controlling}
+\section{Special}
 
 
 \chapter{Persönlicher Bereich}
