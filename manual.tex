@@ -26,7 +26,7 @@
 \begin{document}
 {
 \centering
-\includegraphics[scale=0.2]{figs/logo.PNG}
+%\includegraphics[scale=0.2]{figs/logo.PNG}
 
 ~\\ 
 
@@ -39,8 +39,8 @@
 \newpage
 
 \chapter{Einleitung}
-\section{Ziele und Einsatzgebiete des Programmes}
-Das Programm soll den direkten und uneingeschränkten Zugriff auf alle zur Durchführung einer klinischen Studie erforderlichen Informationen ermöglichen. Dabei sollen redundante Dateneingaben konsequent vermieden werden (beispielsweise Visitentermine in einen Übersichtskalender, auf Merkblätter, auf Fahrtkostenabrechnungen und auf Sponsorrechnungen, 'don't repeat yourself'). Schlussendlich  soll auch die Quelldatendokumentation erleichtert werden.
+\section{Ziele  des Programmes}
+Das Programm soll primär einen barrierefreien Zugriff auf alle zur Durchführung einer klinischen Studie erforderlichen Informationen ermöglichen. Zusätzlich sollen redundante Dateneingaben konsequent vermieden werden (beispielsweise Visitentermine in einen Übersichtskalender, auf Merkblätter, auf Fahrtkostenabrechnungen und auf Sponsorrechnungen, 'don't repeat yourself'). Schlussendlich  soll auch die Quelldatendokumentation erleichtert werden.
 
 
 Durch die Realisation des Programmes als Web-Anwendung ist es von jedem Bildschirmarbeitsplatz  ohne Softwareinstallation verfügbar. Das Programm läuft in allen aktuellen Browsern (Safari, Chrome, Firefox und Internet Explorer).
@@ -48,14 +48,30 @@ Das leistungsstarke Framework Cappuccino (www.cappuccino.org) ermöglicht dabei a
 
 \section{Grundlegende Bedinungskonzepte}
 \label{ui-concepts}
-Ein zentrales Element in der Benutzeroberfläche ist das so genannte {\it TableView} (Abbildung \ref{fig:tableView}). Die Zeilen einer solchen Tabelle können selektiert sein und sind dann invertiert (weiße Schrift auf dunklem Hintergrund). Eine Zeile wird mit einem einem einfachen Mausklick selektiert. In diesem Fall wird die vorherige Selektion annulliert. Ist während des Mausklicks die Shift- bzw. Kommando-Taste gedrückt, wird die  vorhandene Selektion nicht annuliert, sondern die angeklickte Zeile zusätzlich markiert. Mit gedrückter Kommando-Taste kann eine selektierte Zeile auch gezielt deselektiert und die restliche Selektion  erhalten werden. Die Selektion ist Grundlage für Aktionen aus dem 'ButtonBar' unterhalb der Tabelle (Abbildung \ref{fig:buttonBar}). Der Minus-Knopf löscht die selektierten Zeilen, der Plus-Knopf generiert eine neue Zeile. Über den 'Zahnrad'-Knopf sind weitere Aktionen auf die selektieren Zeilen zugänglich. Ggf. sind zusätzlch Aktionsknöpfe mit Piktogrammen neben dem Zahnradmenü aufgereiht. Eine Kurzbeschreibung ('Tool tip') dieser Aktionen erscheint wenn der Mauszeiger eine kurze Zeit über den Knopf positioniert wird. Endet der 'Tool tip' mit drei Punkten, erfolgt nach dem Drücken der Schaltfläche noch eine Rückfrage.
+Ein zentrales Element in der Benutzeroberfläche ist das so genannte {\it TableView} (Abbildung \ref{fig:tableView}). Die Zeilen einer solchen Tabelle können selektiert sein und sind dann invertiert (weiße Schrift auf dunklem Hintergrund). Eine Zeile wird mit einem einem einfachen Mausklick selektiert. In diesem Fall wird die vorherige Selektion annulliert. Ist während des Mausklicks die Shift- bzw. Kommando-Taste gedrückt, wird die  vorhandene Selektion nicht annuliert, sondern die angeklickte Zeile zusätzlich markiert. Mit gedrückter Kommando-Taste kann eine selektierte Zeile auch gezielt deselektiert und die restliche Selektion  erhalten werden. Die Selektion ist Grundlage für Aktionen aus dem 'ButtonBar' unterhalb der Tabelle (Abbildung \ref{fig:tableView}). Der Minus-Knopf löscht die selektierten Zeilen, der Plus-Knopf generiert eine neue Zeile. Über den 'Zahnrad'-Knopf sind weitere Aktionen auf die selektieren Zeilen zugänglich. Ggf. sind zusätzlch Aktionsknöpfe mit Piktogrammen neben dem Zahnradmenü aufgereiht. Eine Kurzbeschreibung ('Tool tip') dieser Aktionen erscheint wenn der Mauszeiger eine kurze Zeit über den Knopf positioniert wird. Endet der 'Tool tip' mit drei Punkten, erfolgt nach dem Drücken der Schaltfläche noch eine Rückfrage.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{figs/tableview.png}
+\caption{Das so genannte {\it TableView} ist ein immer wiederkehrendes Element in der Benutzeroberfläche. Die Spalten lassen sich sortieren, in der Breite ändern und verschieben. Darunter befindet sich in der Regel ein {\it ButtonBar} für Aktionen auf die Daten der Tabelle.}
+\label{fig:tableView}
+\end{center}
+\end{figure}
 
 Ein Klick auf die Tabellenüberschrift sortiert die Tabelle nach der angeklickten Spalte. Spalten lassen sich durch klicken und ziehen umsortieren. Die Breite von Tabellenspalten lässt sich durch Ziehen des Spaltenzwischenraumes anpassen. Diese Änderungen werden lokal gespeichert und bei einem neuen Programmaufruf wiederhergestellt.
 In der Regel ermöglicht ein Doppelklick auf das TableView das Bearbeiten der angeklickten Zelle. Ggf. öffnen sich spezifische Eingabehilfen wie ein Mini-Kalender.
 
 
 \chapter{Studienübersicht}
-Die Studienübersicht befindet sich in der linken Spalte der Benutzeroberfläche (Abbildung \ref{fig:uebersicht}). Die Breite der linken Spalte lässt sich durch Ziehen der dünnen schwarzen Trennlinie rechts neben dem TableView (dauerhaft) anpassen. Neben Studientitel und zugewiesener Arbeitsgruppe findet sich der momentane Stand im 'Lebenszyklus' der Studie, die Studienphase sowie der Sponsor in der Tabelle. Nur der Studientitel ist über Doppelklick direkt editierbar. Der Studienstand ermittelt sich automatisch aus Angaben im Bereich 'Zeitereignisse' (s. Kapitel \ref{section:zyklus}). Die  Studienphase und der Sponsor werden  automatisch den entsprechenden Angaben der strukturierten Datenablage entnommen, und müssen ggf. an dieser Stelle verändert werden (s. Kapitel xx).
+Die Studienübersicht befindet sich in der linken Spalte der Benutzeroberfläche (Abbildung \ref{fig:uebersicht}). Die Breite der linken Spalte lässt sich durch Ziehen der dünnen schwarzen Trennlinie rechts neben dem TableView (dauerhaft) anpassen. Neben Studientitel und zugewiesener Arbeitsgruppe findet sich der momentane Stand im 'Lebenszyklus' der Studie, die Studienphase sowie der Sponsor in der Tabelle. Nur der Studientitel ist über Doppelklick direkt editierbar. Der Studienstand ermittelt sich automatisch aus Angaben im Bereich 'Zeitereignisse' (s. Kapitel \ref{section:zyklus}). Die  Studienphase und der Sponsor werden  automatisch den entsprechenden Angaben der strukturierten Datenablage entnommen, und müssen ggf. an dieser Stelle verändert werden (s. Kapitel \ref{chap:data}).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.38]{figs/overview.png}
+\caption{Die Benutzeroberfläche unterteilt sich in einen konstanten linken Bereich mit der Studienübersicht und einen variablen rechten Bereich, dessen Inhalt über die Tab-Reiter im Kopfbereich bestimmt wird. Die Breite des linken und rechten Bereiches lässt sich über das Ziehen der Trennlinie mit der Maus jederzeit verändern.}
+\label{fig:uebersicht}
+\end{center}
+\end{figure}
 
 Über der Studienübersicht befindet sich ein Suchfeld, dass während  der Eingabe kontinuierlich die Studienliste auf die Suchtreffer reduziert. Dabei werden  neben dem Titel der Studie auch alle Felder der strukturierten Datenablage und alle Namen der eingeschlossenen Patienten durchsucht.
 
@@ -64,14 +80,22 @@ Die selektierte Studie kann über den Minus-Knopf des ButtonBars unter der Studie
 Der 'Reload-Knopf' frischt die Studientabelle auf. Dies ist insbesondere nach Änderungen in den Zeitereignissen sinnvoll, die den Studienstatus beeinflussen. Der Download Knopf lädt eine Excel-Tabelle mit allen sichtbaren Studien herunter. Der Play-Knopf öffnet eine eingegrenzte Eingabemaske auf die selektierte Studie.
 
 \section{Neue Studie anlegen und konfigurieren}
-Eine neue Studie wird auf den Plus-Knopf des ButtonBars unter der Studienliste generiert. Die Studie wird dabei automatisch der ersten Arbeitsgruppe des angemeldeten Benutzers zugeordnet. Direkt nach dem Anlegen wird  der Eingabefokus automatisch auf den Namen der Studie in die  Tabelle bewegt, sodass der gewünschte Name eingegeben werden. Im Anschluss lässt sich die Studie über den 'Konfiguationsknopf'  konfigurieren, der ein Fenster für die Konfiguration der aktuell markierten Studie (Abbildung xx).
+Eine neue Studie wird auf den Plus-Knopf des ButtonBars unter der Studienliste generiert. Die Studie wird dabei automatisch der ersten Arbeitsgruppe des angemeldeten Benutzers zugeordnet. Direkt nach dem Anlegen wird  der Eingabefokus automatisch auf den Namen der Studie in die  Tabelle bewegt, sodass der gewünschte Name eingegeben werden. Im Anschluss lässt sich die Studie über den 'Konfiguationsknopf'  konfigurieren, der ein Fenster für die Konfiguration der aktuell markierten Studie (Abbildung \ref{fig:config}).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.34]{figs/config.png}
+\caption{Konfigurationsfenster für die  selektierte Studie. Hier werden u.a. die Statuswerte der für Studienteilnehmer, die Visitenintervalle und deren Prozeduren mit zugehörigem Personal hinterlegt.}
+\label{fig:config}
+\end{center}
+\end{figure}
 
 \subsection{Grundeinstellungen}
 \label{chap:config}
-In der ersten Spalte des Konfigurationsfensters lassen sich unter der Überschrift 'Basic data' der Studienname und die Gruppenzugehärigkeit ändern. Darunter werden im TableView 'Status values' die Zustände verwaltet, die ein Studienteilnehmer durchlaufen kann. Zu jedem Zustand wird in der Spalte 'alerting' mit einer '1' festgelegt, dass Patienten mit diesem Zustand  kontinuierlich überwacht werden sollen (z.B. Meldung aller Klinikskontakte via E-Mail). Mit einer '0' wird diese Überwachung unterdrückt. Diese Einstellung ist beispielsweise für 'Screen-Failures' oder nach Studienende sinnvoll, um überflüssige Benachrichtigungen zu vermeiden. Die  E-Mail-Adressen sind im Administrationsbereich hinterlegt (Kapitel xx).
+In der ersten Spalte des Konfigurationsfensters lassen sich unter der Überschrift 'Basic data' der Studienname und die Gruppenzugehärigkeit ändern. Darunter werden im TableView 'Status values' die Zustände verwaltet, die ein Studienteilnehmer durchlaufen kann. Zu jedem Zustand wird in der Spalte 'alerting' mit einer '1' festgelegt, dass Patienten mit diesem Zustand  kontinuierlich überwacht werden sollen (z.B. Meldung aller Klinikskontakte via E-Mail). Mit einer '0' wird diese Überwachung unterdrückt. Diese Einstellung ist beispielsweise für 'Screen-Failures' oder nach Studienende sinnvoll, um überflüssige Benachrichtigungen zu vermeiden. Die  E-Mail-Adressen sind im Administrationsbereich hinterlegt (Kapitel \ref{chap:admin}).
 
 \subsection{Visiten}
-In der zweiten Rubrik 'Visits' werden die Studienvisiten verwaltet. Jede Visite wird mit dem Plus-Knopf generiert und muss dann geeignet benannt werden. Das jeweilige Visitenintervall wird in die Spalte 'interval' eingetragen. Die Intervalle müssen als Zahl mit Einheit eingegeben werden, z.B.  '23 days', '6 mons' oder '2 years'. Toleranzen für den Visitentermin lassen sich über die beiden  Spalten 'obergrenze' und 'untergrenze' in gleicher weise definieren. Die jeweilige Bezugsvisite für das Visitenintervall muss über die Spalte 'reference visit' spezifiziert werden. Die einzige Ausnahme bildet die  Referenzvisite (in der Regel die Studieneinschlussvisite). Die Referenzvisite lässt sich ggf. über das Zahnrad-Menü 'unset reference visit'  wieder entfernen. Die so markierte Visite wird dadurch  zur Referenzvisite.  Die Visiten lassen sich  über die Spalte 'ordering' explizit sortieren. Diese Spalte kann mit dem Sortieren-Knopf automatisch belegt werden. In der Spalte 'reimbursement' werden die ausgehandelten Visitenvergütungen (in Euro) als einheitslose Zahlen hinterlegt. Diese sind Grundlage für die automatisierte Rechnungserstellung (Kapitel xx). Die  Kosten einer Visite lassen sich ggf. vorab über die Visitenprozeduren im Sinne eines Kostenvoranschlages für den Sponsor kalkulieren (s.u.). In der Spalte 'booking' lassen sich die Namen von 'DocsCal'-Sprechstunden hinterlegen, in die Patienten beim Buchen dieser Visite zusätzlich zur Studiensprechstunde gebucht werden (beispiel: Fluoreszenangiographie). Die Spallte 'comment' nimmt Kommentare auf, die beim Buchen der Termine eingeblendet werden (Abbildung xx).
+In der zweiten Rubrik 'Visits' werden die Studienvisiten verwaltet. Jede Visite wird mit dem Plus-Knopf generiert und muss dann geeignet benannt werden. Das jeweilige Visitenintervall wird in die Spalte 'interval' eingetragen. Die Intervalle müssen als Zahl mit Einheit eingegeben werden, z.B.  '23 days', '6 mons' oder '2 years'. Toleranzen für den Visitentermin lassen sich über die beiden  Spalten 'obergrenze' und 'untergrenze' in gleicher weise definieren. Die jeweilige Bezugsvisite für das Visitenintervall muss über die Spalte 'reference visit' spezifiziert werden. Die einzige Ausnahme bildet die  Referenzvisite (in der Regel die Studieneinschlussvisite). Die Referenzvisite lässt sich ggf. über das Zahnrad-Menü 'unset reference visit'  wieder entfernen. Die so markierte Visite wird dadurch  zur Referenzvisite.  Die Visiten lassen sich  über die Spalte 'ordering' explizit sortieren. Diese Spalte kann mit dem Sortieren-Knopf automatisch belegt werden. In der Spalte 'reimbursement' werden die ausgehandelten Visitenvergütungen (in Euro) als einheitslose Zahlen hinterlegt. Diese sind Grundlage für die automatisierte Rechnungserstellung (Kapitel \ref{chap:rechnung}). Die  Kosten einer Visite lassen sich ggf. vorab über die Visitenprozeduren im Sinne eines Kostenvoranschlages für den Sponsor kalkulieren (s.u.). In der Spalte 'booking' lassen sich die Namen von 'DocsCal'-Sprechstunden hinterlegen, in die Patienten beim Buchen dieser Visite zusätzlich zur Studiensprechstunde gebucht werden (beispiel: Fluoreszenangiographie). Die Spallte 'comment' nimmt Kommentare auf, die beim Buchen der Termine eingeblendet werden (Abbildung xx).
 
 Zu jeder Visite lassen sich in der Rubrik 'Procedures' des Konfigurationsfensters die zugehörigen Prozeduren hinterlegen. Prozeduren lassen sich über den Plus-Knopf hinzufügen. Der Eingabefokus springt dann auf die  neue Prozedur und diese kann über eine ComboBox spezifiziert werden.  Zu jeder Prozedur ist in der Spalte 'base costs' ein Preisvorschlag hinterlegt ('Hauskatalog', Konfiguationsbereich, Kapitel xx).  Es muss in der Spalte 'actual costs' ein konkreter Preis festgelegt werden (beispielsweise durch Übernahme des 'base costs'-Wertes). Das bisherige Preisspektrum für diese Prozedur ist in den Spalten 'min' (billigster Preis), 'avg' (durchschnittlicher Preis in allen bisherigen Studien mit dieser Prozedur) und 'max' (bislang höchster ausgehandelter Preis) sichtbar.
 Die Spalten 'ordering' und 'parameter' sind der Gestaltung des elektronischen Worksheets zu dieser Visite vorbehalten (Kapitel xx). % fixme: what is 'parameter' used for?
@@ -79,6 +103,7 @@ Die Spalten 'ordering' und 'parameter' sind der Gestaltung des elektronischen Wo
 In der letzten Rubrik 'Personnel' lassen sich jeder Prozedur eine oder mehrere zuständige Personen zuordnen. Die Angabe mehrerer Personen ist dabei als Vertreterkette zu verstehen. Die spezifische Zuordnung von Personen zu Prozeduren ermöglicht zum einen einen personalisierten Kalender (Kapitel xx) als auch eine Konsistenzprüfung bei der Terminbuchung (Kapitel xx) unter Rückgriff auf den Abwesenheitskalender (Kapitel xx).  Sind alle erforderlichen Personen für die Prozeduren am  avisierten Visitentermin  abwesend, erscheint beim Buchen eine entsprechende   Warnmeldung.
 
 \section{Strukturierte Datenablage}
+\label{chap:data}
 Die strukturierte Datenablage befindet sich in der Registerkarte 'Eigenschaften'. Sie ermöglicht die  Erfassung frei definierbarer Eigenschaften  für jede Studie am Prüfzentrum (z.B. Titel, Name des klinischen Monitors usw.). Dabei werden diese Eigenschaften im Sinne eines 'Steckbriefes' stets in der gleichen  Reihenfolge angezeigt. Dies ermöglicht zum das schnelle Auffinden der gesuchten Information, zum anderen werden ausgewählte Datenfelder zum Ausfüllen von hinterlegten Formularen (z.B. Name des Sponsors für die Rechnugserstellung) verwendet. Einige Felder lassen sich direkt über den 'Play'-Knopf der ButtonBar öffnen. In Tabelle \ref{tab:playbutton} findet sich eine Übersicht  dieser Felder.
 
 \begin{table}[htdp]
@@ -200,6 +225,7 @@ Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwese
 
 
 \chapter{Administrationbereich}
+\label{chap:admin}
 Hier werden globale eigenschaften hinterlegt.
 \section{Benutzerverwaltung}
 Erklärung des Rechtekonzepts.
