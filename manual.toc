@@ -22,16 +22,17 @@
 \contentsline {chapter}{\numberline {6}Patienten und Visiten}{17}{chapter.6}
 \contentsline {section}{\numberline {\relax 6.1}Patienten}{17}{section.6.1}
 \contentsline {section}{\numberline {\relax 6.2}Visiten}{17}{section.6.2}
-\contentsline {chapter}{\numberline {7}Hauptmen\"u}{19}{chapter.7}
-\contentsline {section}{\numberline {\relax 7.1}Edit}{19}{section.7.1}
-\contentsline {section}{\numberline {\relax 7.2}Controlling}{19}{section.7.2}
-\contentsline {section}{\numberline {\relax 7.3}Special}{19}{section.7.3}
-\contentsline {chapter}{\numberline {8}Pers\"onlicher Bereich}{20}{chapter.8}
-\contentsline {chapter}{\numberline {9}Administrationbereich}{21}{chapter.9}
-\contentsline {section}{\numberline {\relax 9.1}Benutzerverwaltung}{21}{section.9.1}
-\contentsline {section}{\numberline {\relax 9.2}Team Meetings}{21}{section.9.2}
-\contentsline {section}{\numberline {\relax 9.3}Groupware features}{21}{section.9.3}
-\contentsline {section}{\numberline {\relax 9.4}Prozedurenkatalog}{21}{section.9.4}
-\contentsline {chapter}{\numberline {A}Erstellung eigener Widgets}{22}{appendix.A}
-\contentsline {chapter}{\numberline {B}Erstellung eigener Formulare}{23}{appendix.B}
-\contentsline {chapter}{\numberline {C}Installationsanleitung}{24}{appendix.C}
+\contentsline {section}{\numberline {\relax 6.3}Worksheets}{19}{section.6.3}
+\contentsline {chapter}{\numberline {7}Hauptmen\"u}{20}{chapter.7}
+\contentsline {section}{\numberline {\relax 7.1}Edit}{20}{section.7.1}
+\contentsline {section}{\numberline {\relax 7.2}Controlling}{20}{section.7.2}
+\contentsline {section}{\numberline {\relax 7.3}Special}{20}{section.7.3}
+\contentsline {chapter}{\numberline {8}Pers\"onlicher Bereich}{21}{chapter.8}
+\contentsline {chapter}{\numberline {9}Administrationbereich}{22}{chapter.9}
+\contentsline {section}{\numberline {\relax 9.1}Benutzerverwaltung}{22}{section.9.1}
+\contentsline {section}{\numberline {\relax 9.2}Team Meetings}{22}{section.9.2}
+\contentsline {section}{\numberline {\relax 9.3}Groupware features}{22}{section.9.3}
+\contentsline {section}{\numberline {\relax 9.4}Prozedurenkatalog}{22}{section.9.4}
+\contentsline {chapter}{\numberline {A}Erstellung eigener Widgets}{23}{appendix.A}
+\contentsline {chapter}{\numberline {B}Erstellung eigener Formulare}{24}{appendix.B}
+\contentsline {chapter}{\numberline {C}Installationsanleitung}{25}{appendix.C}
