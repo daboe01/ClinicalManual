@@ -97,10 +97,10 @@ In der ersten Spalte des Konfigurationsfensters lassen sich unter der Überschrif
 \subsection{Visiten}
 In der zweiten Rubrik 'Visits' werden die Studienvisiten verwaltet. Jede Visite wird mit dem Plus-Knopf generiert und muss dann geeignet benannt werden. Das jeweilige Visitenintervall wird in die Spalte 'interval' eingetragen. Die Intervalle müssen als Zahl mit Einheit eingegeben werden, z.B.  '23 days', '6 mons' oder '2 years'. Toleranzen für den Visitentermin lassen sich über die beiden  Spalten 'obergrenze' und 'untergrenze' in gleicher weise definieren. Die jeweilige Bezugsvisite für das Visitenintervall muss über die Spalte 'reference visit' spezifiziert werden. Die einzige Ausnahme bildet die  Referenzvisite (in der Regel die Studieneinschlussvisite). Die Referenzvisite lässt sich ggf. über das Zahnrad-Menü 'unset reference visit'  wieder entfernen. Die so markierte Visite wird dadurch  zur Referenzvisite.  Die Visiten lassen sich  über die Spalte 'ordering' explizit sortieren. Diese Spalte kann mit dem Sortieren-Knopf automatisch belegt werden. In der Spalte 'reimbursement' werden die ausgehandelten Visitenvergütungen (in Euro) als einheitslose Zahlen hinterlegt. Diese sind Grundlage für die automatisierte Rechnungserstellung (Kapitel \ref{chap:rechnung}). Die  Kosten einer Visite lassen sich ggf. vorab über die Visitenprozeduren im Sinne eines Kostenvoranschlages für den Sponsor kalkulieren (s.u.). In der Spalte 'booking' lassen sich die Namen von 'DocsCal'-Sprechstunden hinterlegen, in die Patienten beim Buchen dieser Visite zusätzlich zur Studiensprechstunde gebucht werden (beispiel: Fluoreszenangiographie). Die Spallte 'comment' nimmt Kommentare auf, die beim Buchen der Termine eingeblendet werden (Abbildung \ref{fig:visits}).
 
-Zu jeder Visite lassen sich in der Rubrik 'Procedures' des Konfigurationsfensters die zugehörigen Prozeduren hinterlegen. Prozeduren lassen sich über den Plus-Knopf hinzufügen. Der Eingabefokus springt dann auf die  neue Prozedur und diese kann über eine ComboBox spezifiziert werden.  Zu jeder Prozedur ist in der Spalte 'base costs' ein Preisvorschlag hinterlegt ('Hauskatalog', Konfiguationsbereich, Kapitel xx).  Es muss in der Spalte 'actual costs' ein konkreter Preis festgelegt werden (beispielsweise durch Übernahme des 'base costs'-Wertes). Das bisherige Preisspektrum für diese Prozedur ist in den Spalten 'min' (billigster Preis), 'avg' (durchschnittlicher Preis in allen bisherigen Studien mit dieser Prozedur) und 'max' (bislang höchster ausgehandelter Preis) sichtbar.
+Zu jeder Visite lassen sich in der Rubrik 'Procedures' des Konfigurationsfensters die zugehörigen Prozeduren hinterlegen. Prozeduren lassen sich über den Plus-Knopf hinzufügen. Der Eingabefokus springt dann auf die  neue Prozedur und diese kann über eine ComboBox spezifiziert werden.  Zu jeder Prozedur ist in der Spalte 'base costs' ein Preisvorschlag hinterlegt ('Hauskatalog', Konfiguationsbereich, Kapitel \ref{chap:admin}).  Es muss in der Spalte 'actual costs' ein konkreter Preis festgelegt werden (beispielsweise durch Übernahme des 'base costs'-Wertes). Das bisherige Preisspektrum für diese Prozedur ist in den Spalten 'min' (billigster Preis), 'avg' (durchschnittlicher Preis in allen bisherigen Studien mit dieser Prozedur) und 'max' (bislang höchster ausgehandelter Preis) sichtbar.
 Die Spalten 'ordering' und 'parameter' sind der Gestaltung des elektronischen Worksheets zu dieser Visite vorbehalten (Kapitel \ref{chap:worksheet}). % fixme: what is 'parameter' used for?
 
-In der letzten Rubrik 'Personnel' lassen sich jeder Prozedur eine oder mehrere zuständige Personen zuordnen. Die Angabe mehrerer Personen ist dabei als Vertreterkette zu verstehen. Die spezifische Zuordnung von Personen zu Prozeduren ermöglicht zum einen einen personalisierten Kalender (Kapitel \ref{chap:calendar}) als auch eine Konsistenzprüfung bei der Terminbuchung (Kapitel xx) unter Rückgriff auf den Abwesenheitskalender (Kapitel xx).  Sind alle erforderlichen Personen für die Prozeduren am  avisierten Visitentermin  abwesend, erscheint beim Buchen eine entsprechende   Warnmeldung.
+In der letzten Rubrik 'Personnel' lassen sich jeder Prozedur eine oder mehrere zuständige Personen zuordnen. Die Angabe mehrerer Personen ist dabei als Vertreterkette zu verstehen. Die spezifische Zuordnung von Personen zu Prozeduren ermöglicht zum einen einen personalisierten Kalender (Kapitel \ref{chap:calendar}) als auch eine Konsistenzprüfung bei der Terminbuchung (Kapitel xx) unter Rückgriff auf den Abwesenheitskalender (Kapitel \ref{chap:personal}).  Sind alle erforderlichen Personen für die Prozeduren am  avisierten Visitentermin  abwesend, erscheint beim Buchen eine entsprechende   Warnmeldung.
 
 \section{Strukturierte Datenablage}
 \label{chap:data}
@@ -131,7 +131,16 @@ Die Felder der strukturierten Datenablage der aktuell selektierten Studie können
 
 
 \chapter{Dokumentenablage}
-Die Dokumentenablage befindet sich in der Registerkarte 'Dokumente'. Sie nimmt  beliebige Dokumente  auf. Die Ablage erfolgt für jede Studie getrennt in ca. 20 vorgefertigten Rubriken (z.B. Studienprotokoll, Ethik, Patienteninfo...). Diese Rubriken entsprechen den Ordnern im Dateisystem und ermöglichen das gezieltere Auffinden der gesuchten Information.  Die Dokumente können über den 'down\-load'-Knopf jederzeit zum Ausdrucken oder zur Ansicht auf die lokale Festplatte kopiert werden (i.d.R. werden PDF und Bilddokumente direkt im Web-Browser angezeigt).
+Die Dokumentenablage befindet sich in der Registerkarte 'Dokumente' (Abbildung \ref{fig:docs}). Sie nimmt  beliebige Dokumente  auf. Die Ablage erfolgt für jede Studie getrennt in ca. 20 vorgefertigten Rubriken (z.B. Studienprotokoll, Ethik, Patienteninfo...).  Dokumente können über den 'down\-load'-Knopf jederzeit zum Ausdrucken oder zur Ansicht auf die lokale Festplatte kopiert werden (i.d.R. werden PDF und Bilddokumente direkt im Web-Browser angezeigt).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.33]{figs/docs.png}
+\caption{Dokumentenbereich.}
+\label{fig:docs}
+\end{center}
+\end{figure}
+
 
 Dateien werden über den Plus-Knopf der Button-Bar hinzufügt. Dafür öffnet sich das Upload-Fenster (Abbildung xx). Dateien werden der aktuell markierten Studie entweder via Drag-and-Drop in dieses Fenster, oder über den  'klassischen' Auswahldialog des Betriebssystems hinzugefügt. Letzterer lässt sich über den 'Add' Knopf öffnen. Nach dem Upload sind die Dateien  der Rubrike 'Unclassified' zugeordnet. Über das Popup-Menü in der Spalte 'verschieben in' lässt sich das Dokument der geeigneten Rubrik zuordnen. Durch einen Doppelklick auf den Dateinamen (Spalte 'name') lässt sich der Dateiname editieren. Die Spalte 'date' zeigt das letzte Änderungsdatum der Datei zum Zeitpunkt des Hochladens.
 
@@ -232,6 +241,7 @@ Die Patienten können über die Tabelle rechts neben den Visiten mittels Doppelkli
 
 
 \chapter{Persönlicher Bereich}
+\label{chap:personal}
 Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
 
 
