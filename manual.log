@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.9.10)  10 FEB 2015 21:21
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.9.10)  11 FEB 2015 20:03
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -511,9 +511,13 @@ File: figs/overview.png Graphic file (type png)
  <./figs/overview.png>] <figs/config.png, id=213, 1183.42125pt x 550.055pt>
 File: figs/config.png Graphic file (type png)
 
-<use figs/config.png> [7 <./figs/config.png>] [8] [9] [10]
+<use figs/config.png> [7 <./figs/config.png>] [8] [9]
+<figs/search.png, id=242, 371.3875pt x 123.46124pt>
+File: figs/search.png Graphic file (type png)
+ <use figs/search.png>
+[10 <./figs/search.png>]
 Kapitel 3.
-<figs/docs.png, id=248, 854.19125pt x 506.89375pt>
+<figs/docs.png, id=252, 854.19125pt x 506.89375pt>
 File: figs/docs.png Graphic file (type png)
  <use figs/docs.png> [11
 
@@ -533,10 +537,10 @@ Kapitel 6.
 [17
 
 
-] <figs/visits.png, id=287, 665.48625pt x 309.155pt>
+] <figs/visits.png, id=291, 665.48625pt x 309.155pt>
 File: figs/visits.png Graphic file (type png)
  <use figs/visits.png>
-Overfull \hbox (1.00299pt too wide) in paragraph at lines 219--220
+Overfull \hbox (1.00299pt too wide) in paragraph at lines 227--228
  [] 
  []
 
@@ -558,23 +562,23 @@ Kapitel 9.
 ]
 Anhang A.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 271.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 271.
+nput line 279.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 279.
 
 (/usr/local/texlive/2008/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (10.044pt too wide) in paragraph at lines 278--279
+Overfull \hbox (10.044pt too wide) in paragraph at lines 286--287
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (73.02924pt too wide) in paragraph at lines 284--285
+Overfull \hbox (73.02924pt too wide) in paragraph at lines 292--293
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (41.53662pt too wide) in paragraph at lines 285--286
+Overfull \hbox (41.53662pt too wide) in paragraph at lines 293--294
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -589,60 +593,60 @@ Anhang B.
 ]
 Anhang C.
 
-Overfull \hbox (41.53662pt too wide) in paragraph at lines 303--304
+Overfull \hbox (41.53662pt too wide) in paragraph at lines 311--312
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (54.13367pt too wide) in paragraph at lines 304--305
+Overfull \hbox (54.13367pt too wide) in paragraph at lines 312--313
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (54.13367pt too wide) in paragraph at lines 305--306
+Overfull \hbox (54.13367pt too wide) in paragraph at lines 313--314
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (28.93958pt too wide) in paragraph at lines 306--307
+Overfull \hbox (28.93958pt too wide) in paragraph at lines 314--315
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (167.50708pt too wide) in paragraph at lines 307--308
+Overfull \hbox (167.50708pt too wide) in paragraph at lines 315--316
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (22.64105pt too wide) in paragraph at lines 309--310
+Overfull \hbox (22.64105pt too wide) in paragraph at lines 317--318
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (180.10413pt too wide) in paragraph at lines 310--311
+Overfull \hbox (180.10413pt too wide) in paragraph at lines 318--319
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][] 
  []
 
 
-Overfull \hbox (1339.03235pt too wide) in paragraph at lines 311--312
+Overfull \hbox (1339.03235pt too wide) in paragraph at lines 319--320
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][] 
  []
 
 
-Overfull \hbox (85.62628pt too wide) in paragraph at lines 314--315
+Overfull \hbox (85.62628pt too wide) in paragraph at lines 322--323
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (41.53662pt too wide) in paragraph at lines 315--316
+Overfull \hbox (41.53662pt too wide) in paragraph at lines 323--324
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (230.49231pt too wide) in paragraph at lines 317--318
+Overfull \hbox (230.49231pt too wide) in paragraph at lines 325--326
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -655,10 +659,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8443 strings out of 493876
- 122979 string characters out of 1150568
- 250413 words of memory out of 3000000
- 11472 multiletter control sequences out of 10000+50000
+ 8450 strings out of 493876
+ 123090 string characters out of 1150568
+ 250509 words of memory out of 3000000
+ 11477 multiletter control sequences out of 10000+50000
  33539 words of font info for 43 fonts, out of 3000000 for 5000
  714 hyphenation exceptions out of 8191
  40i,13n,41p,1697b,1108s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -668,9 +672,9 @@ live/2008/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texli
 ve/2008/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2008
 /texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2008/texmf-
 dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on manual.pdf (25 pages, 293244 bytes).
+Output written on manual.pdf (25 pages, 302861 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 131072)
- 302 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 411 PDF objects out of 1000 (max. 8388607)
+ 112 named destinations out of 1000 (max. 131072)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 
