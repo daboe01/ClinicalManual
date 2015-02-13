@@ -32,15 +32,18 @@
 
 {\noindent \huge \bf CapClinical \\~\\}
 {\noindent \large \bf Clinical trials in a box\\~\\}
-{\noindent   Daniel Böhringer}
+{\noindent   Daniel Böhringer\\~\\}
+\vspace{5cm}
+\includegraphics[scale=0.63]{figs/logo.png}
 
 }
+
 \tableofcontents
 \newpage
 
 \chapter{Einleitung}
 \section{Ziele  des Programmes}
-Das Programm soll primär einen barrierefreien Zugriff auf alle zur Durchführung einer klinischen Studie erforderlichen Informationen ermöglichen. Zusätzlich sollen redundante Dateneingaben konsequent vermieden werden (beispielsweise Visitentermine in einen Übersichtskalender, auf Merkblätter, auf Fahrtkostenabrechnungen und auf Sponsorrechnungen, 'don't repeat yourself'). Schlussendlich  soll auch die Quelldatendokumentation erleichtert werden.
+Oberstes Ziel des Programmes ist der barrierefreie Zugriff auf alle zur Durchführung einer klinischen Studie erforderlichen Informationen. Zusätzlich sollen redundante Dateneingaben konsequent vermieden werden ('don't repeat yourself', z.B. Übernahme der Visitentermine in den Übersichtskalender, auf die Merkblätter, auf die Fahrtkosten-- und die Visitenabrechnungen mit dem Sponsor). Schlussendlich  soll auch die Quelldatendokumentation erleichtert werden.
 
 
 Durch die Realisation des Programmes als Web-Anwendung ist es von jedem Bildschirmarbeitsplatz  ohne Softwareinstallation verfügbar. Das Programm läuft in allen aktuellen Browsern (Safari, Chrome, Firefox und Internet Explorer).
@@ -121,14 +124,23 @@ Serienbrief & Generiert eine PDF-Datei einem Serienbrief (\LaTeX-Format) für all
 \label{tab:playbutton}
 \end{table}%
  
-Mit dem Anlegen einer Studie (Kapitel xx) wird eine standardisierte Auswahl aller Datenfelder autmatisch angelegt. Werte lassen sich über einen Doppelklick auf die Spalte 'val' eingeben bzw. editieren. Wenn längere Texte erfasst werden müssen, kann ein mehrzeiliges Eingabefenster über den Knopf 'Open multiline editor' angefordert werden. Weitere Felder lassen sich über den Plus-Knopf der ButtonBar ergänzen. Es öffnet sich dann eine Auswahlliste, in der eine Mehrfachauswahl möglich ist, sodass mit einer Aktion mehrere Felder hinzufgefügt werden können (Abbildung xx). In der Auswahlliste lässt sich  über die Spalte 'order' die Reihenfolge der Felder in der strukturierten Datenablage festlegen. Die Spalte 'type' definiert die automatisch angelegten Felder (Wert '1'). In der Spalte 'default' kann ggf. ein Standardwert vorgegeben werden, der bei Anlage des Datenfeldes vorgelegt wird.  Über die Aktion das Zahnrad-Menüs der ButtonBar 'add all standard fields' lassen sich für die aktuell markierte Studie alle   Standardfelder erzeugen. Dies ist zum Beispiel sinnvoll, wenn  neue Standardfelder nach dem Anlegen der Studie hinzugefügt wurden. Die  Zahnrad-Menü-Aktion  'Open annotations...' öffnet ein  Eingabefenster, in dem für jedes Datenfeld beliebige Schlüssel-Werte Paare  abgelegt werden können (Abbildung xx). Diese Daten werden für jeden Benutzer getrennt verwaltet und eignen sich daher  zur Ablage von Zugangsdaten. So können z.B. in dem Feld der URL des eCRF Benutzername und Password in der Annotations-Tabelle hinterlegt werden. Auf diese Weise stehen die Zugangsdaten sicher und ortsunabhängig jederzeit zur Verfügung. 
+Mit dem Anlegen einer Studie (Kapitel xx) wird eine standardisierte Auswahl aller Datenfelder autmatisch angelegt. Werte lassen sich über einen Doppelklick auf die Spalte 'val' eingeben bzw. editieren. Wenn längere Texte erfasst werden müssen, kann ein mehrzeiliges Eingabefenster über den Knopf 'Open multiline editor' angefordert werden. Weitere Felder lassen sich über den Plus-Knopf der ButtonBar ergänzen. Es öffnet sich dann eine Auswahlliste, in der eine Mehrfachauswahl möglich ist, sodass mit einer Aktion mehrere Felder hinzufgefügt werden können (Abbildung xx). In der Auswahlliste lässt sich  über die Spalte 'order' die Reihenfolge der Felder in der strukturierten Datenablage festlegen. Die Spalte 'type' definiert die automatisch angelegten Felder (Wert '1'). In der Spalte 'default' kann ggf. ein Standardwert vorgegeben werden, der bei Anlage des Datenfeldes vorgelegt wird.  Über die Aktion das Zahnrad-Menüs der ButtonBar 'add all standard fields' lassen sich für die aktuell markierte Studie alle   Standardfelder erzeugen. Dies ist zum Beispiel sinnvoll, wenn  neue Standardfelder nach dem Anlegen der Studie hinzugefügt wurden. Die  Zahnrad-Menü-Aktion  'Open annotations...' öffnet ein  Eingabefenster, in dem für jedes Datenfeld beliebige Schlüssel-Werte Paare  abgelegt werden können (Abbildung \ref{fig:password}). Diese Daten werden für jeden Benutzer getrennt verwaltet und eignen sich daher  zur Ablage von Zugangsdaten. So können z.B. in dem Feld der URL des eCRF Benutzername und Password in der Annotations-Tabelle hinterlegt werden. Auf diese Weise stehen die Zugangsdaten sicher und ortsunabhängig jederzeit zur Verfügung. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.84]{figs/passwordmanager.png}
+\caption{Das Annotations-Fenster  öffnet sich über einen Doppelklick auf den Feldnamen (hier: eCRF\_URL) bzw. über die Zahnradaktion 'Open annotations...'. Die hier hinterlegten Felder sind für andere Benutzer unsichtbar}
+\label{fig:password}
+\end{center}
+\end{figure}
+
 
 \subsection{Volltextsuche}
 Das Suchfeld über der Studientabelle ermöglicht das Durchsuchen der Studien nach Stichwörtern.  Mehrere Suchbegriffe werden mit dem logischen 'und' verknüpft. Groß-/ Kleinschreibung wird ignoriert. Die Suche erfolgt in Echtzeit während der Eingabe. Nur  auf die Suchbegriffe zutreffende Studien werden angezeigt. Die Suchbegriffe lassen sich ggf. mit einem Click auf das kleine 'X'  rechts im Suchfeld (Abbildung \ref{fig:search}) eliminieren, um alle Studien wieder anzuzeigen. Bei der Suche werden der Studientitel, alle Felder der strukturierten Datenablage, die Zeitereignisse und das Subject log (Patientennamen / PIZ) berücksichtigt. % fixme: <!> dokumente durchsuchen?!.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.84]{figs/search.png}
+\includegraphics[scale=0.64]{figs/search.png}
 \caption{Das Suchfeld über der Studienliste durchsucht alle Daten in Echtzeit.}
 \label{fig:search}
 \end{center}
@@ -201,8 +213,16 @@ Archived & Das Enddatum des Ereignisses Gesamtlaufzeit wurde überschritten und d
 
 \section{Arbeitskalender}
 \label{chap:calendar}
-Das Kalenderfenster öffnet sich über das 'Special'-Hauptmenü  (Abbildung xx). Es wird der aktuelle Monat angezeigt und der aktuelle Tag  gelb umrandet. Andere Jahre und Monate können über die beiden ersten Eingabefelder oberhalb des Kalenderbereiches ausgewählt werden.
+Das Kalenderfenster öffnet sich über das 'Special'-Hauptmenü  (Abbildung \ref{fig:calendar}). Es wird der aktuelle Monat angezeigt und der aktuelle Tag  gelb umrandet. Andere Jahre und Monate können über die beiden ersten Eingabefelder oberhalb des Kalenderbereiches ausgewählt werden.
 Studienvisiten sind in schwarzer, andere Ereignisse wie beispielsweise Monitorierungsvisiten, Teameetings (Kapitel xx) oder Personalabwesenheiten (Kapitel xx) in  grauer Schrift dargestellt. Termine mit Überschneidungen oder Konflikten sind mit einem Ausrufungszeichen in spitzen Klammern gekennzeichnet.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{figs/calendar.png}
+\caption{Das Kalenderfenster zeigt die Terminübersicht für den aktuellen Benutzer.}
+\label{fig:calendar}
+\end{center}
+\end{figure}
 
  Die   Ereignisse können über das Ankreuzfeld 'Filter for me'  für  den aktuellen Benutzer gefiltert werden. Dies blendet alle Studienvisiten aus, bei denen der aktuelle Benutzer keiner Prozedur (Kapitel xx)  zugeordnet ist. Zusätzlich werden die Zeitereignisse, die explizit einer anderen Person zugewiesen sind nicht mehr angezeigt.  Der Kalender steht unter der URL /iCAL/{\it ldap} auch als iCAL feed zur Verfügung ({\it ldap}  muss selbstverständlich durch das eigene LDAP-Kürzel ersetzt werden ). Über die Parameter '?personalized=1' kann der Feed analog zum  Ankreuzfeld 'Filter for me' personalisiert werden. % stimmt der link?! parameter show end dokumentieren.
 Team meetings.
@@ -329,8 +349,9 @@ sudo perl -MCPAN -e 'install ($_) for qw/Mojolicious Mojolicious::Plugin::Databa
 
 \begin{itemize}
 \item Cappuccino Project
+\item Mojolicious
 \item FontAwesome
-
+\item Beta-Testerinnen
 \end{itemize}
 
 \end{appendix}
