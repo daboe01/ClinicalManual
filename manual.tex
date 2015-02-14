@@ -161,6 +161,7 @@ Die Felder der strukturierten Datenablage der aktuell selektierten Studie können
 
 
 \chapter{Dokumentenablage}
+\label{chap:dokus}
 Die Dokumentenablage befindet sich in der Registerkarte 'Dokumente' (Abbildung \ref{fig:docs}). Sie nimmt  für jede Studie getrennt beliebige Dokumente  auf. Die Ablage erfolgt  in ca. 20 vorgefertigten Rubriken (z.B. Studienprotokoll, Ethik, Patienteninfo...).  Dokumente können über den 'down\-load'-Knopf   auf die lokale Festplatte kopiert werden (i.d.R. werden PDF und Bilddokumente direkt im Web-Browser angezeigt, andere Dokumente lassen sich lokal ausdrucken bzw. weiter verarbeiten).
 
 \begin{figure}[htbp]
@@ -359,8 +360,8 @@ Worksheets werden aus den für die Visiten hinterlegten Prozeduren automatisch ge
 
 
 \chapter{Hauptmenü}
-Das Hauptmenü nimmt einen Streifen am oberen Ende des Browser-Fensters ein und beinhaltet Befehle, die nicht ausschließlich für einen Teilbereich des Programms anwendbar sind.
 \label{chap:mainmenu}
+Das Hauptmenü nimmt einen Streifen am oberen Ende des Browser-Fensters ein und beinhaltet  diejenigen Befehle, die nicht ausschließlich für einen Teilbereich des Programms anwendbar sind.
 \section{Edit}
 Im Menü Edit finden sich die üblichen Befehle zum  kopieren, einfügen und maximieren der Selektion. Dies bezieht sich je nach Eingabefokus auf Tabellenzeilen oder die Textmarke. 
 Selbiges gilt für die Befehle Undo und Redo, die die letzte Aktion zurücknehmen bzw. Wiederherstellen.
@@ -371,11 +372,31 @@ Der Befehl 'Download unbilledlist' lädt eine Excel-Tablle aller noch nicht abger
 Der Befehl 'Accounts...' verzweigt in die Kontoübersicht des aktuell angemeldeten Benutzers (siehe Kapitel \ref{chap:admin} zum Rechtekonzept des Programmes). Der Befehl 'Admin...' ruft schlussendlich den Administrationsbereich des Programmes (Kapitel \ref{chap:admin}).
 
 \section{Special}
-Unter dem Menü 'Special' sind der Benutzerkalender (Kapitel \ref{chap:calendar}), der persönliche Bereich (Kapitel \ref{chap:personal}) und der Logout Befehl subsummiert.
+Unter dem Menü 'Special' sind der Benutzerkalender (Kapitel \ref{chap:calendar}), der persönliche Bereich (Kapitel \ref{chap:personal}) und schlussendlich der Logout Befehl subsummiert.
 
 \chapter{Persönlicher Bereich}
 \label{chap:personal}
-Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
+\section{Personenbezogene Dokumente}
+Der persönliche  Bereich lässt sich über das Special-Menü erreichen (Kapitel \ref{chap:mainmenu}). Über einen Tab-Reiter ist der Bereich in 'Dokumente', Eigenschaften ('Properties') und Abwesenheiten ('Events') dreigeteilt (Abbildung \ref{fig:personal}). Dokumente werden über den Plus-Knopf hinzugefügt (Analog Kapitel \ref{chap:dokus}) und über den Minus-Knopf ggf. entfernt. Diese Dokumente sind für den Studienkoordinator über den Administrationsbereich (Kapitel \ref{chap:admin}) zugänglich, um beispielsweise die Lebensläufe aller beteiligten Personen gesammelt an den Sponsor zu senden.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{figs/personal.png}
+\caption{Fenster des persönlichen Bereiches, in dem die eigenen Dokumente, strukturierte Daten ('Properies') und Abwesenheiten ('Events') abgelegt werden.}
+\label{fig:personal}
+\end{center}
+\end{figure}
+
+\section{Personenbezogene Zeitereignisse}
+Die persönlichen  Abwesenheiten lassen sich über den Tab-Reiter 'Events' erfassen (Abbildung \ref{fig:pevents}). 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{figs/pevents.png}
+\caption{Erfassung der persönlichen Abwesenheiten. Diese werden im Team-Kalender angezeigt und bei der Visitenplanung berücksichtigt.}
+\label{fig:pevents}
+\end{center}
+\end{figure}
 
 
 \chapter{Administrationbereich}
@@ -385,13 +406,9 @@ Hier werden globale eigenschaften hinterlegt.
 Erklärung des Rechtekonzepts.
 Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer ist mindestens einer Arbeitsgruppe zugeordnet. Nur die Studien  der zugeordneten Arbeitsgruppen sind für den angemeldeten Benutzer sichtbar. Die Benutzerverwaltung und das Rechte\-konzept sind folgendermaßen.
 
-\section{Team Meetings}
-Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
-
-
-Erklärung der einzelnen Tabs.
 \section{Groupware features}
 \label{chap:groupware}
+Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
 
 \section{Prozedurenkatalog}
 Hauspreise, GoAE
@@ -402,7 +419,7 @@ Verweis auf Anhang mit beispielcode. Dauer der prozedur in minuten..
 \chapter{Erstellung eigener Widgets}
 Klassenhierachie, SimpleWidget vs. Cappusance, Timer, Stopwatch.
 
-\begin{lstlisting}[caption=Complete source code of a minimalistic widget.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
+\begin{lstlisting}[caption=GUI part of  minimalistic widget.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
 <?xml version="1.0"?>
 <!DOCTYPE gsmarkup>
 <gsmarkup>
@@ -434,25 +451,8 @@ Klassenhierachie, SimpleWidget vs. Cappusance, Timer, Stopwatch.
 \label{chap:makeforms}
 
 \chapter{Installationsanleitung}
-
-\begin{lstlisting}[caption=Installationsbefehle beispielhaft fuer MacOS X.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
-# the easiest way to get Postgres up and running on a mac is Postgres.app
-/Applications/Postgres.app/Contents/Versions/9.3/bin/createdb  aug_clinical
-/Applications/Postgres.app/Contents/Versions/9.3/bin/createuser postgres -s
-/Applications/Postgres.app/Contents/Versions/9.3/bin/createuser root -s
-cat sql_template.sql | /Applications/Postgres.app/Contents/Versions/9.3/bin/psql aug_clinical
-#
-# we need a current TeX distribution such as <https://tug.org/mactex/>
-# perl is already installed on linux and mac but we need quite a bunch of non-core perl modules
-sudo perl -MCPAN -e 'install ($_) for qw/Mojolicious Mojolicious::Plugin::Database Mojolicious::Plugin::RenderFile SQL::Abstract::More Apache::Session::File Spreadsheet::WriteExcel Spreadsheet::ParseExcel Business::IBAN DBD::Pg Date::ICal Data::ICal Data::ICal::Entry::TimeZone/'
-# now you can either call morbo backend.pl (testing server)
-# or launch hypnotoad backend.pl during system boot
-# locate your favourite web browser to http://localhost:3000/Frontend/index.html
-# (you may change the port either in backend.pl or from the command line)
-# the username is pi with no password
-# (passwords are not enforced unless you modify the helper LDAPChallenge with backend.pl appropriately)
-\end{lstlisting}
-
+Die Installationsanleitung befindet sich auf der GitHub-Seite des Programmes. Die URL lautet: 
+\url{https://github.com/daboe01/Clinical}
 \chapter{Danksagungen}
 
 \begin{itemize}
