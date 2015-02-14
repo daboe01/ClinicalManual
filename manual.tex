@@ -161,7 +161,7 @@ Die Dokumentenablage befindet sich in der Registerkarte 'Dokumente' (Abbildung \
 \end{figure}
 
 
-Dateien werden über den Plus-Knopf der Button-Bar hinzufügt. Dafür öffnet sich das Upload-Fenster (Abbildung xx). Dateien werden der aktuell markierten Studie entweder via Drag-and-Drop in dieses Fenster, oder über den  'klassischen' Auswahldialog des Betriebssystems hinzugefügt. Letzterer lässt sich über den 'Add' Knopf öffnen. Nach dem Upload sind die Dateien  der Rubrike 'Unclassified' zugeordnet. Über das Popup-Menü in der Spalte 'verschieben in' lässt sich das Dokument der geeigneten Rubrik zuordnen. Durch einen Doppelklick auf den Dateinamen (Spalte 'name') lässt sich der Dateiname editieren. Die Spalte 'date' zeigt das letzte Änderungsdatum der Datei zum Zeitpunkt des Hochladens.
+Dateien werden über den Plus-Knopf der Button-Bar hinzufügt. Dafür öffnet sich das Upload-Fenster (Abbildung \ref{fig:docs}). Dateien werden der aktuell markierten Studie entweder via Drag-and-Drop in dieses Fenster, oder über den  'klassischen' Auswahldialog des Betriebssystems hinzugefügt. Letzterer lässt sich über den 'Add' Knopf öffnen. Nach dem Upload sind die Dateien  der Rubrike 'Unclassified' zugeordnet. Über das Popup-Menü in der Spalte 'verschieben in' lässt sich das Dokument der geeigneten Rubrik zuordnen. Durch einen Doppelklick auf den Dateinamen (Spalte 'name') lässt sich der Dateiname editieren. Die Spalte 'date' zeigt das letzte Änderungsdatum der Datei zum Zeitpunkt des Hochladens.
 
 Über den Minus-Knopf lassen sich Dokumente nach einer Sicherheitsrückfrage rückstandsfrei löschen. Rubriken ohne zugeordnete Dateien werden nicht angezeigt, sodass ausschließlich Rubriken mit zugeordneten Dateien in der Spalte 'folder' gelistet sind. Diese Spalte lässt sich ggf. durch Betätigen des Reload-Knopfes aktualisieren (beispielsweise nach einem Upload oder nach einer Löschung).
 
@@ -186,7 +186,17 @@ Fahrtkosten werden üblicherweise von dem Prüfzentrum vorgestreckt. Über  die Akt
 In der Spalte 'date' findet sich das Visitendatum. In der Spalte 'add. costs' lassen sich ggf. Zusatzkosten zu dem o.g. Kilometergeld (z.B. Parkgebühren) für die jeweilige Visite geltend machen. In die Spalte 'alt. costs' kann ggf. ein alternativer Festpreis für die An- und Abreise zu dieser Visite festgelegt werden (beispielsweise Taxikosten oder Preis des Bahntickets). Die Spalte 'date reimbursed' nimmt das Abrechnungsdatum auf. Dieses merkt den Fahrtkostenbetrag schlussendlich für die spätere Rückvergütung durch den Sponsor vor und wird über die Zahnradaktion 'Als abgerechnet markieren' automatisch eingetragen. Die Spalte Kommentar nimmt ggf. einen begründen Text auf, der  auf das Anordnungsformular übernommen wird.
 
 \chapter{Termine und Ereignisse}
-Das Zeitereignisse der aktuell selektierten Studie werden  unter der Registerkarte 'Zeitereignisse' verwaltet. Ein neues Ereignis kann über den Plus-Knopf der Button-Bar  angelegt werden.   Danach muss über das Popup der Spalte 'name' die Bedeutung des Ereignisses definiert werden.  Start- und Enddatum können über einen Doppelklick in die Spalten 'start' und 'end' eingegeben oder über einen Minikalender ausgewählt werden. Für Ereignisse, die noch nicht abgeschlossen bzw. erledigt sind, kann das Enddatum auch ausgelassen werden. Die Spalte 'responsible' nimmt ggf. die zuständige Person auf, und in der Spalte 'comment' kann erklärender Freitext abgelegt werden.
+Das Zeitereignisse der aktuell selektierten Studie werden  unter der Registerkarte 'Zeitereignisse' verwaltet (Abbildung \ref{fig:zeit}). Ein neues Ereignis kann über den Plus-Knopf der Button-Bar  angelegt werden.   Danach muss über das Popup der Spalte 'name' die Bedeutung des Ereignisses definiert werden.  Start- und Enddatum können über einen Doppelklick in die Spalten 'start' und 'end' eingegeben oder über einen Minikalender ausgewählt werden. Für Ereignisse, die noch nicht abgeschlossen bzw. erledigt sind, kann das Enddatum auch ausgelassen werden. Die Spalte 'responsible' nimmt ggf. die zuständige Person auf, und in der Spalte 'comment' kann erklärender Freitext abgelegt werden.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{figs/zeitereignisse.png}
+\caption{Alle zeitabhängigen Vorgänge einer Studie werden in der Tabelle Zeitereignisse dokumentiert.}
+\label{fig:zeit}
+\end{center}
+\end{figure}
+
+
 \section{Aufgabenlisten}
 Die Zeitereignisse dienen zum einen dazu, Meilensteine oder Treffen (z.B. Monitorierung oder Initiierungen) in den Arbeitskalender einzutragen. Zeitereignisse können zum anderen als Aufgabenlisten fungieren (z.B. Schulungen für einzelne Personen). In diesem Fall darf  erst nach Absolvierung der Aufgabe ein geeignetes Datum in die Spalte 'end' eingetragen werden. Über die Zahnradaktion 'Todo liste' lädt eine Excel-Tabelle mit allen nicht erledigten Aufgaben der aktuellen Studie herunter. Der Befehl 'Download Todo Liste'  aus dem 'Controlling'-Hauptmenü generiert eine Gesamtliste der noch nicht erledigten Aufgaben in allen Studien, die dem aktuellen Benutzer zugeordnet sind.
 
@@ -271,11 +281,33 @@ Dabei erfolgt im Hintergrund zusätzlich ein Abgleich mit den Terminen der zugehö
 
 In die Spalte 'comment' wird das Kommentarfeld zu dieser Visite aus dem Konfigurationsfenster eingeblendet. Alle in der Visitentabelle dargestellten Informationen lassen sich über den Drucken-Knopf auf einen Terminzettel drucken, der dem Patienten ausgehändigt werden kann.
 
-Die Patienten können über die Tabelle rechts neben den Visiten mittels Doppelklick in das Order-Entry-System des Klinikums eingebucht werden. Studien- und Visitenname werden als Buchungstext vorgeschlagen und können ggf. ergänzt werden. Mit dem Knopf-Buchen erfolgt die Buchung, was  ggf. einige Sekunden dauern kann (erkennbar an dem Drehrad). Bei erfolgreicher Buchung wird der gebuchte Termin für die selektierte Visite  eingetragen. Dann erfolgt im Hintergrund eine Überprüfung dieser Buchung auf etwaige Terminüberschneidungen. Dafür werden die Terminkalender aller für die Abwicklung der Visitenprozeduren Personen auf Grundlage der hinterlegten Durchführungszeiträume überprüft. Überschneidet sich für mindestens eine Person der aktuelle Termin mit bereits gebi
+Die Patienten können über die Tabelle rechts neben den Visiten mittels Doppelklick in das Order-Entry-System des Klinikums eingebucht werden (Abbildung \ref{fig:buchen}). Studien- und Visitenname werden als Buchungstext vorgeschlagen und können ggf. ergänzt werden.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.44]{figs/buchen.png}
+\caption{Fenster zm Einbuchen der Visite in das 'Order entry system' des Klinikums.}
+\label{fig:buchen}
+\end{center}
+\end{figure}
+
+
+Mit dem Knopf 'Buchen' erfolgt die Buchung, was  ggf. einige Sekunden dauern kann (erkennbar an dem Drehrad). Bei erfolgreicher Buchung wird der gebuchte Termin für die selektierte Visite  eingetragen. Dann erfolgt im Hintergrund eine Überprüfung dieser Buchung auf etwaige Terminüberschneidungen. Dafür werden die Terminkalender aller für die Abwicklung der Visitenprozeduren Personen auf Grundlage der hinterlegten Durchführungszeiträume überprüft. Überschneidet sich für mindestens eine Person der aktuelle Termin mit bereits gebi
 
 % Open/print worksheet, , dummy for booking. überschneidungen.
 \section{Worksheets}
 \label{chap:worksheet}
+Worksheets werden aus den für die Visiten hinterlegten Prozeduren automatisch generiert. Sie können am Bildschirm ausgefüllt und dann zum datieren und unterschreiben gedruckt werden (Abbildung \ref{fig:worksheet}). Die hinterlegten Eingabeelemente unterstützen die Study nurse dabei so gut es geht. Zeitintervalle können beispielweise bei Bedarf direkt ausgestoppt und Zeitstempel per Knopfdruck eingelesen werden.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.44]{figs/worksheet.png}
+\caption{Ein automatisch generiertes Worksheet für eine 'visit3'.  Die Eingabeelemente unterstützen die Study nurse dabei so gut es geht. Zeitstempel können automatisch eingelesen werden.}
+\label{fig:worksheet}
+\end{center}
+\end{figure}
+
 
 \chapter{Hauptmenü}
 \section{Edit}
@@ -364,6 +396,7 @@ sudo perl -MCPAN -e 'install ($_) for qw/Mojolicious Mojolicious::Plugin::Databa
 
 \begin{itemize}
 \item Cappuccino Project
+\item postgres
 \item Mojolicious
 \item FontAwesome
 \item Beta-Testerinnen
