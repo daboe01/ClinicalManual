@@ -157,7 +157,7 @@ Das Suchfeld über der Studientabelle ermöglicht das Durchsuchen der Studien nach
 \end{figure}
 
 \subsection{Formulardruck}
-Die Felder der strukturierten Datenablage der aktuell selektierten Studie können in PDF-Formulare und beliebige \LaTeX Vorlagen eingedruckt werden. Momentan sind diesbezüglich die Dritmittelanzeige sowie ein Anschreiben für den Vertragsumlauf vorbereitet. Beide Formulare lassen sich über das Zahnrad-Menü der ButtonBar unter der Studientabelle abrufen. Weitere  \LaTeX Vorlagen können hinterlegt werden (Anhang \ref{chap:makeforms}). % fixme: <!> das zahnradmenue sollte sich eigentlich automatisch fuellen, sodass ein aufkopieren einer neuen vorlage ausreichen wuerde.
+Die Felder der strukturierten Datenablage der aktuell selektierten Studie können in PDF-Formulare und beliebige \LaTeX Vorlagen eingedruckt werden. Momentan sind diesbezüglich die Dritmittelanzeige sowie ein Anschreiben für den Vertragsumlauf vorbereitet. Beide Formulare lassen sich über das Zahnrad-Menü der ButtonBar unter der Studientabelle abrufen. Weitere  \LaTeX Vorlagen können hinterlegt werden. % fixme: <!> das zahnradmenue sollte sich eigentlich automatisch fuellen, sodass ein aufkopieren einer neuen vorlage ausreichen wuerde.
 
 
 \chapter{Dokumentenablage}
@@ -388,7 +388,7 @@ Der persönliche  Bereich lässt sich über das Special-Menü erreichen (Kapitel \re
 \end{figure}
 
 \section{Personenbezogene Zeitereignisse}
-Die persönlichen  Abwesenheiten lassen sich über den Tab-Reiter 'Events' erfassen (Abbildung \ref{fig:pevents}). 
+Die persönlichen  Abwesenheiten lassen sich über den Tab-Reiter 'Events' erfassen (Abbildung \ref{fig:pevents}). Über den Plus-Knopf lässt sich ein neues Ereignis erfassen. Über den die Spalte 'name' lässt sich der Ereignistyp festlegen. Komplette Abwesenheiten werden  als 'Urlaub genehmigt' markiert. Der erste und letzte Tag der Abwesenheit wird dabei in die Spalten 'start\_time' und 'end\_time' eingetragen. Teilzeitbeschäftigungen mit wöchentlichen Abwesenheitstagen werden als 'Abwesenheitstage' eingetragen. Für jeden Abwesenheitswochentag muss eine eigene Zeile angelegt werden. Der Wochentag wird dabei numerisch in der Kommentarzeile kodiert (1=Montag, 2=Dienstag usw.). Über die Spalten 'start\_time' und 'end\_time' wird der Zeitraum der Abwesenheitsregelung festgelegt (hier kann ggf. die Vertragslaufzeit eingetragen werden).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -401,8 +401,18 @@ Die persönlichen  Abwesenheiten lassen sich über den Tab-Reiter 'Events' erfasse
 
 \chapter{Administrationbereich}
 \label{chap:admin}
-Hier werden globale eigenschaften hinterlegt.
-\section{Benutzerverwaltung}
+Der Administrationsbereich lässt sich über das Controlling-Menü erreichen (Kapitel \ref{chap:mainmenu}). Unter dem Administrationsbereich sind die Benutzer- und Gruppenverwaltung, die Verwaltung der Zeitereignisse und  der Prozedurenkatalog angeordnet (Abbildung \ref{fig:admin}).
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{figs/admin.png}
+\caption{Administrationsbereich.}
+\label{fig:admin}
+\end{center}
+\end{figure}
+
+\section{Benutzer- und Gruppenverwaltung}
 Erklärung des Rechtekonzepts.
 Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer ist mindestens einer Arbeitsgruppe zugeordnet. Nur die Studien  der zugeordneten Arbeitsgruppen sind für den angemeldeten Benutzer sichtbar. Die Benutzerverwaltung und das Rechte\-konzept sind folgendermaßen.
 
@@ -447,12 +457,10 @@ Klassenhierachie, SimpleWidget vs. Cappusance, Timer, Stopwatch.
 {{\bf<value2>} (0=Nein, 1=Ja). Beantwortet: {\bf<value1>}}
 \end{lstlisting}
 
-\chapter{Erstellung eigener Formulare}
-\label{chap:makeforms}
-
 \chapter{Installationsanleitung}
-Die Installationsanleitung befindet sich auf der GitHub-Seite des Programmes. Die URL lautet: 
-\url{https://github.com/daboe01/Clinical}
+Das Programm kann  über folgende GitHub-Seite bezogen werden: 
+\url{https://github.com/daboe01/Clinical}. Dort findet sich auch eine kurze Installationsaweisung.
+
 \chapter{Danksagungen}
 
 \begin{itemize}
