@@ -157,7 +157,15 @@ Das Suchfeld über der Studientabelle ermöglicht das Durchsuchen der Studien nach
 \end{figure}
 
 \subsection{Formulardruck}
-Die Felder der strukturierten Datenablage der aktuell selektierten Studie können in PDF-Formulare und beliebige \LaTeX Vorlagen eingedruckt werden. Momentan sind diesbezüglich die Dritmittelanzeige sowie ein Anschreiben für den Vertragsumlauf vorbereitet. Beide Formulare lassen sich über das Zahnrad-Menü der ButtonBar unter der Studientabelle abrufen. Weitere  \LaTeX Vorlagen können hinterlegt werden. % fixme: <!> das zahnradmenue sollte sich eigentlich automatisch fuellen, sodass ein aufkopieren einer neuen vorlage ausreichen wuerde.
+Die Felder der strukturierten Datenablage der aktuell selektierten Studie können in PDF-Formulare und beliebige \LaTeX Vorlagen eingedruckt werden. Momentan sind diesbezüglich die Dritmittelanzeige (Abbildung \ref{fig:drittmittelanzeige}) sowie ein allgemeines Anschreiben für den Vertragsumlauf vorbereitet. Beide Formulare lassen sich über das Zahnrad-Menü der ButtonBar unter der Studientabelle abrufen. Weitere  \LaTeX Vorlagen können bei Bedarf mit minimalem Programmieraufwand hinterlegt werden. % fixme: <!> das zahnradmenue sollte sich eigentlich automatisch fuellen, sodass ein aufkopieren einer neuen vorlage ausreichen wuerde.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{figs/drittmittelanzeige.png}
+\caption{Automatisch generierte Drittmittelanzeige. Sämtliche  engedruckte Angaben sind der strukturierten Datenablage und den Zeitereignissen entnommen.}
+\label{fig:drittmittelanzeige}
+\end{center}
+\end{figure}
 
 
 \chapter{Dokumentenablage}
@@ -181,7 +189,15 @@ Dateien werden der aktuellen Studie über den Plus-Knopf der Button-Bar hinzufügt
 \label{chap:rechnung}
 Das Rechungswesen befindet sich in der Registerkarte 'Rechungen'. Alle Rechnungen der aktuell selektierten Studie sind in dem TableView gelistet. In der Spalte 'creation date' befindet sich das Erzeugungsdatum der Rechnung. Das Fälligkeitsdatum und ggf. das Datum des Zahlungseinganges finden sich in den beiden Spalten 'due date' und 'date payed'. Diese beiden Spalten ermöglichen  die Funktion 'Download Inkassolist' (Kapitel \ref{chap:mainmenu}).  Die Spalte 'EUR' enthält den Rechungsbetrag in Euro und die Spalte 'comment' einen beliebigen Kommentar zu dieser Rechnung. Die Spalte 'visits ids' beinhaltet eine kommaseparierte Liste der ids aller inkludierten Visiten. Damit wird die Doppelabrechnung von Studienvisiten nachhaltig unterbunden.
 
-Mit dem Plus-Knopf der ButtonBar wird eine  leere Rechnung angelegt. Dies eignet sich beispielsweise zur Abrechnung von fixen 'Setup-Fees' u.ä. Die Abrechnung einzelner Visiten ist in den folgenden Kapiteln beschrieben. Der Minus-Knopf löscht die selektierte Rechnung nach Rückfrage. Der Download-Knopf generiert die Rechnung im Excel-Format und lädt diese zum Ausdrucken herunter. 
+Mit dem Plus-Knopf der ButtonBar wird eine  leere Rechnung angelegt. Dies eignet sich beispielsweise zur Abrechnung von fixen 'Setup-Fees' u.ä. Die Abrechnung einzelner Visiten ist in den folgenden Kapiteln beschrieben. Der Minus-Knopf löscht die selektierte Rechnung nach Rückfrage. Der Download-Knopf generiert die Rechnung im Excel-Format und lädt diese zum Ausdrucken herunter (Abbildung \ref{fig:bill}). 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{figs/rechnung.png}
+\caption{Automatisch generiertes Rechnungsformular entsprechend den Vorgaben der Drittmittelabteilung. }
+\label{fig:bill}
+\end{center}
+\end{figure}
 
 Der Rechnungseingang lässt sich über die Funktion 'Kontoauszüge einsehen...' aus dem Zahnradmenü überprüfen. Diese Aktion öffnet das der Studie zugeordnete Drittmittelkonto (Abbildung \ref{fig:account}). Die Zuordnung des Kontos erfolgt dabei über die Drittmittelnummer (gleichnamiges Feld in der strukturierten Datenablage Kapitel \ref{chap:data}. Über den 'reload'-Knopf werden die Transaktionen aus dem SAP-System des Klinikums ausgelesen.
 
@@ -401,8 +417,7 @@ Die persönlichen  Abwesenheiten lassen sich über den Tab-Reiter 'Events' erfasse
 
 \chapter{Administrationbereich}
 \label{chap:admin}
-Der Administrationsbereich lässt sich über das Controlling-Menü erreichen (Kapitel \ref{chap:mainmenu}). Unter dem Administrationsbereich sind die Benutzer- und Gruppenverwaltung, die Verwaltung der Zeitereignisse und  der Prozedurenkatalog angeordnet (Abbildung \ref{fig:admin}).
-
+Der Administrationsbereich lässt sich über das Controlling-Menü erreichen (Kapitel \ref{chap:mainmenu}). Unter dem Administrationsbereich sind die Benutzer- und Gruppenverwaltung, die Verwaltung der Zeitereignisse und  der Prozedurenkatalog angeordnet (Abbildung \ref{fig:admin}). 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -413,6 +428,7 @@ Der Administrationsbereich lässt sich über das Controlling-Menü erreichen (Kapit
 \end{figure}
 
 \section{Benutzer- und Gruppenverwaltung}
+Ein neuer Benutzer wird über die Plus-Taste angelegt. In die Spalte 'ldap' muss dann das zugehörige LDAP-Kürzel eingetragen werden. In die Spalte 'name' sollte der vollständige Name (ggf. mit Titel) hinterlegt werden. Dieser wird in die vom Benutzer  generierten Briefe und Formulare automatisch eingesetzt. Die Spalte email nimmt die E-Mail Adresse auf, die ggf. für automatisierte Benachrichtigungen verwendet wird. In die Spalte 'tel' kann eine Telefonnummer hinterlegt werden. Die Rechte des Benutzers ergeben sich aus der Spalte 'level'.
 Erklärung des Rechtekonzepts.
 Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer ist mindestens einer Arbeitsgruppe zugeordnet. Nur die Studien  der zugeordneten Arbeitsgruppen sind für den angemeldeten Benutzer sichtbar. Die Benutzerverwaltung und das Rechte\-konzept sind folgendermaßen.
 
@@ -468,7 +484,7 @@ Das Programm kann  über folgende GitHub-Seite bezogen werden:
 \item postgres
 \item Mojolicious
 \item FontAwesome
-\item Beta-Testerinnen
+\item Die zahlreichen beta-Testerinnen
 \end{itemize}
 
 \end{appendix}
