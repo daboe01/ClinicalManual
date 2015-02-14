@@ -124,7 +124,7 @@ Serienbrief & Generiert eine PDF-Datei einem Serienbrief (\LaTeX-Format) für all
 \label{tab:playbutton}
 \end{table}%
  
-Mit dem Anlegen einer Studie (Kapitel \ref{chap:new}) wird eine standardisierte Auswahl aller Datenfelder autmatisch angelegt. Werte lassen sich über einen Doppelklick auf die Spalte 'val' eingeben bzw. editieren. Wenn längere Texte erfasst werden müssen, kann ein mehrzeiliges Eingabefenster über den Knopf 'Open multiline editor' angefordert werden. Weitere Felder lassen sich über den Plus-Knopf der ButtonBar ergänzen. Es öffnet sich dann eine Auswahlliste, in der eine Mehrfachauswahl möglich ist, sodass mit einer Aktion mehrere Felder hinzufgefügt werden können (Abbildung \ref{fig:addprops}).
+Mit dem Anlegen einer Studie (Kapitel \ref{chap:new}) wird eine standardisierte Auswahl aller Datenfelder  angelegt. Werte lassen sich über einen Doppelklick auf die Spalte 'val' eingeben bzw. editieren. Wenn längere Texte erfasst werden müssen (beispielsweise ein Serienbrief), kann ein mehrzeiliges Eingabefenster über den Knopf 'Open multiline editor' angefordert werden. Weitere Felder lassen sich über den Plus-Knopf der ButtonBar ergänzen. Es öffnet sich dann eine Auswahlliste, in der eine Mehrfachauswahl möglich ist, sodass mit einer Aktion mehrere Felder hinzufgefügt werden können (Abbildung \ref{fig:addprops}).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -147,7 +147,7 @@ In der Auswahlliste lässt sich  über die Spalte 'order' die Reihenfolge der Feld
 
 \subsection{Volltextsuche}
 \label{chap:search}
-Das Suchfeld über der Studientabelle ermöglicht das Durchsuchen der Studien nach Stichwörtern.  Mehrere Suchbegriffe werden mit dem logischen 'und' verknüpft. Groß-/ Kleinschreibung wird ignoriert. Die Suche erfolgt direkt mit  der Eingabe und die Sudientabelle wird kontinuierlich entsprechend gefiltert. Die Suchbegriffe lassen sich ggf. mit einem Click auf das kleine 'X'  rechts im Suchfeld (Abbildung \ref{fig:search}) eliminieren, um alle Studien wieder anzuzeigen. Bei der Suche werden der Studientitel, alle Felder der strukturierten Datenablage, die Zeitereignisse und das Subject log (Patientennamen / PIZ) berücksichtigt. % fixme: <!> dokumente durchsuchen?!.
+Das Suchfeld über der Studientabelle ermöglicht das Durchsuchen der Studien nach Stichwörtern.  Mehrere Suchbegriffe werden mit dem logischen Operator 'und' verknüpft. Groß-/ Kleinschreibung wird für die Suche ignoriert. Diese erfolgt direkt mit  der Eingabe. Dabei wird die Sudientabelle  kontinuierlich gefiltert. Die Suchbegriffe lassen sich ggf. mit einem Klick auf das kleine 'X'  rechts im Suchfeld (Abbildung \ref{fig:search}) wieder eliminieren, um alle Studien  anzuzeigen und erneut mit der Suche zu beginnen. Bei der Suche werden der Studientitel, alle Felder der strukturierten Datenablage, die Zeitereignisse und das Subject log (Patientennamen / PIZ) berücksichtigt. % fixme: <!> dokumente durchsuchen?!.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -158,30 +158,30 @@ Das Suchfeld über der Studientabelle ermöglicht das Durchsuchen der Studien nach
 \end{figure}
 
 \subsection{Formulardruck}
-Die Felder der strukturierten Datenablage der aktuell selektierten Studie können in PDF-Formulare und beliebige \LaTeX Vorlagen eingedruckt werden. Momentan sind diesbezüglich die Dritmittelanzeige sowie ein Anschreiben für den Vertragsumlauf vorbereitet. Beide Formulare lassen sich über das Zahnrad-Menü der ButtonBar unter der Studientabelle abrufen. Weitere  \LaTeX Vorlagen können hinterlegt werden (Anhang xx). % fixme: <!> das zahnradmenue sollte sich eigentlich automatisch fuellen, sodass ein aufkopieren einer neuen vorlage ausreichen wuerde.
+Die Felder der strukturierten Datenablage der aktuell selektierten Studie können in PDF-Formulare und beliebige \LaTeX Vorlagen eingedruckt werden. Momentan sind diesbezüglich die Dritmittelanzeige sowie ein Anschreiben für den Vertragsumlauf vorbereitet. Beide Formulare lassen sich über das Zahnrad-Menü der ButtonBar unter der Studientabelle abrufen. Weitere  \LaTeX Vorlagen können hinterlegt werden (Anhang \ref{chap:makeforms}). % fixme: <!> das zahnradmenue sollte sich eigentlich automatisch fuellen, sodass ein aufkopieren einer neuen vorlage ausreichen wuerde.
 
 
 \chapter{Dokumentenablage}
-Die Dokumentenablage befindet sich in der Registerkarte 'Dokumente' (Abbildung \ref{fig:docs}). Sie nimmt  beliebige Dokumente  auf. Die Ablage erfolgt für jede Studie getrennt in ca. 20 vorgefertigten Rubriken (z.B. Studienprotokoll, Ethik, Patienteninfo...).  Dokumente können über den 'down\-load'-Knopf jederzeit zum Ausdrucken oder zur Ansicht auf die lokale Festplatte kopiert werden (i.d.R. werden PDF und Bilddokumente direkt im Web-Browser angezeigt).
+Die Dokumentenablage befindet sich in der Registerkarte 'Dokumente' (Abbildung \ref{fig:docs}). Sie nimmt  für jede Studie getrennt beliebige Dokumente  auf. Die Ablage erfolgt  in ca. 20 vorgefertigten Rubriken (z.B. Studienprotokoll, Ethik, Patienteninfo...).  Dokumente können über den 'down\-load'-Knopf   auf die lokale Festplatte kopiert werden (i.d.R. werden PDF und Bilddokumente direkt im Web-Browser angezeigt, andere Dokumente lassen sich lokal ausdrucken bzw. weiter verarbeiten).
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.33]{figs/docs.png}
+\includegraphics[scale=0.32]{figs/docs.png}
 \caption{Dokumentenbereich.}
 \label{fig:docs}
 \end{center}
 \end{figure}
 
 
-Dateien werden über den Plus-Knopf der Button-Bar hinzufügt. Dafür öffnet sich das Upload-Fenster (Abbildung \ref{fig:docs}). Dateien werden der aktuell markierten Studie entweder via Drag-and-Drop in dieses Fenster, oder über den  'klassischen' Auswahldialog des Betriebssystems hinzugefügt. Letzterer lässt sich über den 'Add' Knopf öffnen. Nach dem Upload sind die Dateien  der Rubrike 'Unclassified' zugeordnet. Über das Popup-Menü in der Spalte 'verschieben in' lässt sich das Dokument der geeigneten Rubrik zuordnen. Durch einen Doppelklick auf den Dateinamen (Spalte 'name') lässt sich der Dateiname editieren. Die Spalte 'date' zeigt das letzte Änderungsdatum der Datei zum Zeitpunkt des Hochladens.
+Dateien werden der aktuellen Studie über den Plus-Knopf der Button-Bar hinzufügt. Dafür öffnet sich das Upload-Fenster (Abbildung \ref{fig:docs}). Dort können die Dokumente   entweder via Drag-and-Drop in dieses Fenster, oder über den  'klassischen' Auswahldialog des Betriebssystems hinzugefügt werden. Letzterer öffnet sich über den 'Add' Knopf im Upload Fenster. Nach dem Upload sind die Dateien zunächst der Rubrik 'Unclassified' zugeordnet. Über das Popup-Menü in der Spalte 'verschieben in' lässt sich das Dokument der geeigneten Rubrik zuordnen. Durch einen Doppelklick auf den Dateinamen (Spalte 'name') kann der Dateiname nach dem Hochladen angepasst werden. Die Spalte 'date' zeigt das letzte Änderungsdatum der Datei zum Zeitpunkt des Hochladens.
 
-Über den Minus-Knopf lassen sich Dokumente nach einer Sicherheitsrückfrage rückstandsfrei löschen. Rubriken ohne zugeordnete Dateien werden nicht angezeigt, sodass ausschließlich Rubriken mit zugeordneten Dateien in der Spalte 'folder' gelistet sind. Diese Spalte lässt sich ggf. durch Betätigen des Reload-Knopfes aktualisieren (beispielsweise nach einem Upload oder nach einer Löschung).
+Über den Minus-Knopf lassen sich Dokumente nach einer Sicherheitsrückfrage rückstandsfrei löschen. Rubriken ohne zugeordnete Dateien werden nicht angezeigt, sodass in der Spalte 'folders' ausschließlich mit Dokumenten belegte Rubriken   gelistet werden. Diese Spalte lässt sich ggf. durch Betätigen des 'reload'-Knopfes aktualisieren.
 
 \chapter{Rechnungswesen}
 \label{chap:rechnung}
-Das Rechungswesen befindet sich in der Registerkarte 'Rechungen'. Alle Rechnungen der aktuell selektierten Studie sind in dem TableView gelistet. In der Spalte 'creation date' befindet sich das Erzeugungsdatum der Rechnung. Das Fälligkeitsdatum und ggf. das Datum des Zahlungseinganges finden sich in den beiden Spalten 'due date' und 'date payed'. Diese beiden Spalten ermöglichen  die Funktion 'Download Inkassolist' im Hauptmenü 'Controlling'. Diese lädt eine Excel-Tabelle mit allen überfälligen Rechnungen herunter. Die Spalte 'EUR' enthält den Rechungsbetrag in Euro und die Spalte 'comment' einen beliebigen Kommentar zu dieser Rechnung. Die Spalte 'visits ids' beinhaltet eine kommaseparierte Liste der ids aller inkludierten Visiten. Damit wird die Doppelabrechnung von Studienvisiten nachhaltig unterbunden.
+Das Rechungswesen befindet sich in der Registerkarte 'Rechungen'. Alle Rechnungen der aktuell selektierten Studie sind in dem TableView gelistet. In der Spalte 'creation date' befindet sich das Erzeugungsdatum der Rechnung. Das Fälligkeitsdatum und ggf. das Datum des Zahlungseinganges finden sich in den beiden Spalten 'due date' und 'date payed'. Diese beiden Spalten ermöglichen  die Funktion 'Download Inkassolist' (Kapitel \ref{chap:mainmenu}).  Die Spalte 'EUR' enthält den Rechungsbetrag in Euro und die Spalte 'comment' einen beliebigen Kommentar zu dieser Rechnung. Die Spalte 'visits ids' beinhaltet eine kommaseparierte Liste der ids aller inkludierten Visiten. Damit wird die Doppelabrechnung von Studienvisiten nachhaltig unterbunden.
 
-Mit dem Plus-Knopf der ButtonBar wird eine einfache leere Rechnung angelegt. Dies eignet sich beispielsweise zur Abrechnung von fixen 'Setup-Fees' u.ä. Die Abrechnung einzelner Visiten ist in den folgenden Kapiteln beschrieben. Der Minus-Knopf löscht die selektierte Rechnung nach Rückfrage. Der Download-Knopf generiert die Rechnung im Excel-Format und lädt diese zum Ausdrucken herunter.  
+Mit dem Plus-Knopf der ButtonBar wird eine  leere Rechnung angelegt. Dies eignet sich beispielsweise zur Abrechnung von fixen 'Setup-Fees' u.ä. Die Abrechnung einzelner Visiten ist in den folgenden Kapiteln beschrieben. Der Minus-Knopf löscht die selektierte Rechnung nach Rückfrage. Der Download-Knopf generiert die Rechnung im Excel-Format und lädt diese zum Ausdrucken herunter.  
 
 \section{Gesamtabrechnung nach Abschluss der Studie}
 Die Aktion 'Ausstehende Visiten abrechnen' aus dem Zahnradmenü erzeugt eine neue Rechnung über alle Visitentermine der aktuell selektierten Studie, die bislang noch nicht abgerechnet worden sind. Es werden dabei aber nur Visitentermine aus der Vergangenheit berücksichtigt. In die Rechungserstellung fließen die folgenden Felder aus der strukturierten Datenablage ein:  Name der Studie und Sponsoranschrift , 'Overhead inclusive J/N', 'Umsatzsteuer J/N', 'Drittmittelnummer' und 'Ust-ID'.
@@ -190,15 +190,35 @@ Die Aktion 'Ausstehende Visiten abrechnen' aus dem Zahnradmenü erzeugt eine neue
 Sollen einzelne Patienten gezielt abgerechnet werden, müssen diese in der Registerkarte 'Patienten/Visits' (Kapitel xx) selektiert werden (eine Mehrfachselektion ist z.B. mit gedrückter Shift-Taste möglich). Anschließend wird die entsprechende Rechnung über die Aktion 'Selektierte Patienten komplett abrechnen' aus dem  Zahnrad-Menü der ButtonBar des Patienten-TableViews generiert.
 
 \section{Abrechnung einzelner Visiten}
-Häufig werden Studienvisiten nach der Monitorierung gezielt abgerechnet. Dies lässt sich über die Aktion 'Selektierte Patienten partiell abrechnen' im Zahnradmenü der Registerkarte 'Patienten/Visits' (Kapitel xx) erreichen. Es öffnet sich das zweispaltige Fenster 'Einzelvisiten abrechnen' (Abbildung xx). In der linken Spalte sind alle Rechnungen der aktuellen Studie gelistet.  In der linken Spalte sind alle durchgeführten Visiten des aktuellen Patienten aufgelistet. Nun muss in der rechten Spalte Die Rechnung, über die die Visiten abgerechnet werden sollen, selektiert werden.  Über die Plus-Taste lässt sich ggf. dafür eine neue 'leere' Rechnung erzeugen. Als nächstes müssen die abzurechnenden Visiten markiert werden (mit gedrückter Maustaste über die Visiten 'ziehen' bzw. mit gedrückter Shift- bzw. Kommando-Taste mehrfach klicken). Abschließend werden diese Visiten dann über die Zahnrad-Aktion 'Selektierte abrechnen' der ButtonBar unter dem Visiten-TableView des Fensters 'Einzelvisiten abrechnen' in die selektierte Rechnung einbezogen.
+Häufig werden Studienvisiten nach der Monitorierung gezielt abgerechnet. Dies lässt sich über die Aktion 'Selektierte Patienten partiell abrechnen' im Zahnradmenü der Registerkarte 'Patienten/Visits' (Kapitel \ref{chap:patients}) erreichen. Es öffnet sich das zweispaltige Fenster 'Einzelvisiten abrechnen' (Abbildung \ref{fig:partialbill}). In der linken Spalte sind alle Rechnungen der aktuellen Studie gelistet.  In der linken Spalte sind alle durchgeführten Visiten des aktuellen Patienten aufgelistet. Nun muss in der rechten Spalte Die Rechnung, über die die Visiten abgerechnet werden sollen, selektiert werden.  Über die Plus-Taste lässt sich ggf. dafür eine neue 'leere' Rechnung erzeugen. Als nächstes müssen die abzurechnenden Visiten markiert werden (mit gedrückter Maustaste über die Visiten 'ziehen' bzw. mit gedrückter Shift- bzw. Kommando-Taste mehrfach klicken). Abschließend werden diese Visiten dann über die Zahnrad-Aktion 'Selektierte abrechnen' der ButtonBar unter dem Visiten-TableView des Fensters 'Einzelvisiten abrechnen' in die selektierte Rechnung einbezogen.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{figs/partialbilling.png}
+\caption{Partielle Abrechnung von Visiten. Die selektierten Visiten können einer bereits vorhandenen Rechnung hinzugefügt werden. Ggf. kann vorher über den  Plus-Knopf eine neue Rechnung angelegt werden.}
+\label{fig:partialbill}
+\end{center}
+\end{figure}
+
 
 \section{Fahrtkostenabwicklung}
-Fahrtkosten werden üblicherweise von dem Prüfzentrum vorgestreckt. Über  die Aktion 'Fahrtkosten erstatten' im Zahnradmenü der Registerkarte 'Patienten/Visits' (Kapitel xx) lässt sich eine Auszahlanordnung für die Fahrtkosten einzelner Visiten generieren und die Auszahlung zwecks Rückvergütung durch den Sponsor dokumentieren. Es öffnet sich ein Fenster mit dem Titel 'Fahrtkostenerstattung' (Abbildung xx). In die Felder 'IBAN' und 'BIC' lassen sich ggf. jeweils die 'alte' Kontonummer und Bankleitzahl eintragen. Über die Zahnrad-Aktion 'Validate IBAN' werden diese in IBAN und BIC umgerechnet. Die Bank wird über eine lokale Datenbank automatisch aus der IBAN abgeleitet. War bereits eine IBAN eingetragen, erfolgt eine Prüfung IBAN Prüfziffer, und es wird bei Inkonsistenzen ggf. eine Warnmeldung ausgegeben.  In das Feld 'Travel distance' wird bereits mit dem Öffnen des Fensters  die Anreisedistanz mittels PKW eingetragen (Hin- und Rückreise gemäß Google-Maps-API). Aus Datenschutzgründen wird dabei nicht die volle Adressinformation übermittelt, sodass die Distanz geringfügig von einer manuellen Suche in 'Google-Maps' abweichen kann. Die Fahrtkosten werden durch eine Multiplikation der Anreisedistanz mit der vertraglich vereinbarten Kilometerpauschale ermittelt (Feld '' in der strukturierten Datenablage, Kapitel xx).
+Fahrtkosten werden üblicherweise von dem Prüfzentrum vorgestreckt. Über  die Aktion 'Fahrtkosten erstatten' im Zahnradmenü der Registerkarte 'Patienten/Visits' (Kapitel \ref{chap:patients}) lässt sich eine Auszahlanordnung für die Fahrtkosten einzelner Visiten generieren und die Auszahlung zwecks Rückvergütung durch den Sponsor dokumentieren. Es öffnet sich ein Fenster mit dem Titel 'Fahrtkostenerstattung' (Abbildung \ref{fig:travel}).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{figs/travel.png}
+\caption{Fahrtkostenabrechnung für den selektierten Patienten.}
+\label{fig:travel}
+\end{center}
+\end{figure}
+
+
+In die Felder 'IBAN' und 'BIC' lassen sich ggf. jeweils die 'alte' Kontonummer und Bankleitzahl eintragen. Über die Zahnrad-Aktion 'Validate IBAN' werden diese in IBAN und BIC umgerechnet. Die Bank wird über eine lokale Datenbank automatisch aus der IBAN abgeleitet. War bereits eine IBAN eingetragen, erfolgt eine Prüfung IBAN Prüfziffer, und es wird bei Inkonsistenzen ggf. eine Warnmeldung ausgegeben.  In das Feld 'Travel distance' wird bereits mit dem Öffnen des Fensters  die Anreisedistanz mittels PKW eingetragen (Hin- und Rückreise gemäß Google-Maps-API). Aus Datenschutzgründen wird dabei nicht die volle Adressinformation übermittelt, sodass die Distanz geringfügig von einer manuellen Suche in 'Google-Maps' abweichen kann. Die Fahrtkosten werden durch eine Multiplikation der Anreisedistanz mit der vertraglich vereinbarten Kilometerpauschale ermittelt (Feld 'Kilometerpauschale' in der strukturierten Datenablage, Kapitel \ref{chap:data}).
 
 In der Spalte 'date' findet sich das Visitendatum. In der Spalte 'add. costs' lassen sich ggf. Zusatzkosten zu dem o.g. Kilometergeld (z.B. Parkgebühren) für die jeweilige Visite geltend machen. In die Spalte 'alt. costs' kann ggf. ein alternativer Festpreis für die An- und Abreise zu dieser Visite festgelegt werden (beispielsweise Taxikosten oder Preis des Bahntickets). Die Spalte 'date reimbursed' nimmt das Abrechnungsdatum auf. Dieses merkt den Fahrtkostenbetrag schlussendlich für die spätere Rückvergütung durch den Sponsor vor und wird über die Zahnradaktion 'Als abgerechnet markieren' automatisch eingetragen. Die Spalte Kommentar nimmt ggf. einen begründen Text auf, der  auf das Anordnungsformular übernommen wird.
 
 \chapter{Termine und Ereignisse}
-Das Zeitereignisse der aktuell selektierten Studie werden  unter der Registerkarte 'Zeitereignisse' verwaltet (Abbildung \ref{fig:zeit}). Ein neues Ereignis kann über den Plus-Knopf der Button-Bar  angelegt werden.   Danach muss über das Popup der Spalte 'name' die Bedeutung des Ereignisses definiert werden.  Start- und Enddatum können über einen Doppelklick in die Spalten 'start' und 'end' eingegeben oder über einen Minikalender ausgewählt werden. Für Ereignisse, die noch nicht abgeschlossen bzw. erledigt sind, kann das Enddatum auch ausgelassen werden. Die Spalte 'responsible' nimmt ggf. die zuständige Person auf, und in der Spalte 'comment' kann erklärender Freitext abgelegt werden.
+Das Zeitereignisse der aktuell selektierten Studie werden  unter der Registerkarte 'Zeitereignisse' verwaltet (Abbildung \ref{fig:zeit}). Ein neues Ereignis kann über den Plus-Knopf der Button-Bar  angelegt werden.   Danach muss über das Popup der Spalte 'name' die Bedeutung des Ereignisses definiert werden.  Start- und Enddatum können über einen Doppelklick in die Spalten 'start' und 'end' eingegeben oder über einen Mini-Kalender ausgewählt werden. Für Ereignisse, die noch nicht abgeschlossen bzw. erledigt sind, kann das Enddatum auch ausgelassen werden. Die Spalte 'responsible' nimmt ggf. die zuständige Person auf, und in der Spalte 'comment' kann erklärender Freitext abgelegt werden.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -245,14 +265,11 @@ Studienvisiten sind in schwarzer, andere Ereignisse wie beispielsweise Monitorie
 \end{center}
 \end{figure}
 
- Die   Ereignisse können über das Ankreuzfeld 'Filter for me'  für  den aktuellen Benutzer gefiltert werden. Dies blendet alle Studienvisiten aus, bei denen der aktuelle Benutzer keiner Prozedur (Kapitel xx)  zugeordnet ist. Zusätzlich werden die Zeitereignisse, die explizit einer anderen Person zugewiesen sind nicht mehr angezeigt.  Der Kalender steht unter der URL /iCAL/{\it ldap} auch als iCAL feed zur Verfügung ({\it ldap}  muss selbstverständlich durch das eigene LDAP-Kürzel ersetzt werden ). Über die Parameter '?personalized=1' kann der Feed analog zum  Ankreuzfeld 'Filter for me' personalisiert werden. % stimmt der link?! parameter show end dokumentieren.
+ Die   Ereignisse können über das Ankreuzfeld 'Filter for me'  für  den aktuellen Benutzer gefiltert werden.  Dies blendet alle Studienvisiten aus, bei denen der aktuelle Benutzer keiner Prozedur (Kapitel xx)  zugeordnet ist. Die Länge des Ereignisses richtet sich dann ausschließlich nach der Summe der hinterlegten Längen aller persönlich zugeordneten Visitenprozeduren. Auch werden die Zeitereignisse, die explizit einer anderen Person zugewiesen sind, dann nicht mehr angezeigt.  Der Kalender steht unter der URL /iCAL/{\it ldap} auch als iCAL feed zur Verfügung ({\it ldap}  muss dabei durch das eigene LDAP-Kürzel ersetzt werden). Über die Parameter '?personalized=1' kann der Feed analog zum  Ankreuzfeld 'Filter for me' personalisiert werden. % stimmt der link?! parameter show end dokumentieren.
 Team meetings.
 
-
-
-
-
 \chapter{Patienten und Visiten}
+\label{chap:patients}
 \section{Patienten}
 Die Liste der Studienpatienten bzw. das 'Subject identification log'   ist unter der Registerkarte 'Patienten/Visiten' angeordnet (Abbildung \ref{fig:patients}). Neue Patienten werden über den Plus-Knopf unter der Patiententabelle angelegt. Der Eingabefokus bewegt sich damit  direkt in das Feld für die 'Personenidentifikationsziffer' ('piz'). Nach Eingabe einer  PIZ werden mit dem Betätigen der Eingabetaste die Felder 'name', 'givenname' und 'birthdate' automatisch aus dem Klinik-Informationssystem übernommen. Auch die Anschrift ist hinterlegt (beispielsweise für die Serienbrieffunktion, \ref{tab:playbutton}).
 
@@ -306,7 +323,18 @@ Die Patienten können über die Tabelle rechts neben den Visiten mittels Doppelkli
 \end{figure}
 
 
-Mit dem Knopf 'Buchen' erfolgt die Buchung, was  ggf. einige Sekunden dauern kann (erkennbar an dem Drehrad). Bei erfolgreicher Buchung wird der gebuchte Termin für die selektierte Visite  eingetragen. Dann erfolgt im Hintergrund eine Überprüfung dieser Buchung auf etwaige Terminüberschneidungen. Dafür werden die Terminkalender aller für die Abwicklung der Visitenprozeduren Personen auf Grundlage der hinterlegten Durchführungszeiträume überprüft. Überschneidet sich für mindestens eine Person der aktuelle Termin mit bereits gebi
+Mit dem Knopf 'Buchen' erfolgt die Buchung, was  ggf. einige Sekunden dauern kann (erkennbar an dem Drehrad). Bei erfolgreicher Buchung wird der gebuchte Termin für die selektierte Visite  eingetragen. Dann erfolgt im Hintergrund eine Überprüfung dieser Buchung auf etwaige Terminüberschneidungen. Dafür werden die Terminkalender aller für die Abwicklung der Visitenprozeduren Personen auf Grundlage der hinterlegten Durchführungszeiträume überprüft. Bei Überschneidungen öffnet sich ein Warnfenster und der Kalender zeigt die Konflikte an.
+
+Alternativ können Termine auch direkt über einen Doppelklick auf das Terminfeld eingetragen werden (Abbildung \ref{fig:minical}). Nur die Termine des Visitenfensters lassen sich auswählen. Die Patienten werden im Kalender angezeigt, es erfolgt aber keine Buchung im Order entry System des Klinikums.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{figs/minical.png}
+\caption{Direkteingabe des Visitentermins ohne Order entry Buchung im Klinikum.}
+\label{fig:minical}
+\end{center}
+\end{figure}
+
+
 
 % Open/print worksheet, , dummy for booking. überschneidungen.
 \section{Worksheets}
@@ -323,8 +351,10 @@ Worksheets werden aus den für die Visiten hinterlegten Prozeduren automatisch ge
 
 
 \chapter{Hauptmenü}
+\label{chap:mainmenu}
 \section{Edit}
 \section{Controlling}
+Diese lädt eine Excel-Tabelle mit allen überfälligen Rechnungen herunter.
 \section{Special}
 
 
@@ -383,7 +413,9 @@ Klassenhierachie, SimpleWidget vs. Cappusance, Timer, Stopwatch.
 \begin{lstlisting}[caption=Corresponding LaTeX template.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
 {{\bf<value2>} (0=Nein, 1=Ja). Beantwortet: {\bf<value1>}}
 \end{lstlisting}
+
 \chapter{Erstellung eigener Formulare}
+\label{chap:makeforms}
 
 \chapter{Installationsanleitung}
 
