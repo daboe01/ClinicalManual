@@ -42,11 +42,11 @@
 
 \chapter{Einleitung}
 \section{Ziele  des Programmes}
-Oberstes Ziel des Programmes ist der barrierefreie Zugriff auf alle zur Durchführung einer klinischen Studie erforderlichen Informationen. Zusätzlich sollen redundante Dateneingaben konsequent vermieden werden ('don't repeat yourself', z.B. Übernahme der Visitentermine in den Übersichtskalender, auf die Merkblätter, auf die Fahrtkosten-- und die Visitenabrechnungen mit dem Sponsor). Schlussendlich  soll auch die Quelldatendokumentation erleichtert werden.
-
+Oberstes Ziel des Programmes ist der barrierefreie Zugriff auf alle zur Durchführung einer klinischen Studie erforderlichen Informationen. Zusätzlich sollen redundante Dateneingaben konsequent vermieden werden ('don't repeat yourself', z.B. Übernahme der Visitentermine in den Übersichtskalender, auf die Merkblätter, auf die Fahrtkosten-- und die Visitenabrechnungen mit dem Sponsor). Schlussendlich  soll auch die Quelldatendokumentation erleichtert werden. 
 
 Durch die Realisation des Programmes als Web-Anwendung ist es von jedem Bildschirmarbeitsplatz  ohne Softwareinstallation verfügbar. Das Programm läuft in allen aktuellen Browsern (Safari, Chrome, Firefox und Internet Explorer).
-Das leistungsstarke Framework Cappuccino (www.cappuccino.org) ermöglicht dabei alle Funktionen  klassischer Computerprogramme, wie z.B. Tastatursteuerung, Copy/Paste sowie Undo und Redo.
+Das leistungsstarke Framework Cappuccino (www.cappuccino.org) ermöglicht dabei alle Funktionen  klassischer Computerprogramme, wie z.B. Tastatursteuerung, Copy/Paste sowie Undo und Redo. Sämtliche Arbeitsschritte der Benutzer werden  unsichtbar im Hintergrund in einem 'Audit-Trail' protokolliert.
+
 
 \section{Grundlegende Bedinungskonzepte}
 \label{ui-concepts}
@@ -385,15 +385,18 @@ Selbiges gilt für die Befehle Undo und Redo, die die letzte Aktion zurücknehmen 
 \section{Controlling}
 Der Befehl 'Download unbilledlist' lädt eine Excel-Tablle aller noch nicht abgerechneten Visiten der Arbeitsgruppen des angemeldeten Benutzers. Die Aktion 'Download todolist' erstellt eine Liste aller noch nicht abgeschlossenen Zeitereignisse der Arbeitsgruppen des angemeldeten Benutzers. Der Befehl 'Download Inkassolist' generiert eine Excel-Tabelle mit allen überfälligen Rechnungen.
 
-Der Befehl 'Accounts...' verzweigt in die Kontoübersicht des aktuell angemeldeten Benutzers (siehe Kapitel \ref{chap:admin} zum Rechtekonzept des Programmes). Der Befehl 'Admin...' ruft schlussendlich den Administrationsbereich des Programmes (Kapitel \ref{chap:admin}).
+Der Befehl 'Accounts...' verzweigt in die Kontoübersicht des aktuell angemeldeten Benutzers (die erweiterten FInanz-Controlling-Funktionen sind nicht in diesem Benutzerhandbuch beschrieben). Der Befehl 'Admin...' ruft schlussendlich den Administrationsbereich des Programmes auf (Kapitel \ref{chap:admin}).
 
 \section{Special}
-Unter dem Menü 'Special' sind der Benutzerkalender (Kapitel \ref{chap:calendar}), der persönliche Bereich (Kapitel \ref{chap:personal}) und schlussendlich der Logout Befehl subsummiert.
+Unter dem Menü 'Special' sind der Benutzerkalender (Kapitel \ref{chap:calendar}), der persönliche Bereich (Kapitel \ref{chap:personal}) subsummiert. Der  Logout Befehl beendet das Programm und verzweigt wieder auf den Login-Bildschirm. Dieser Befehl ist  identisch zum Betätigen des Reload-Befehls in der Adresszeile des Web-Browsers.
 
 \chapter{Persönlicher Bereich}
 \label{chap:personal}
+Der persönliche  Bereich lässt sich über das Special-Menü erreichen (Kapitel \ref{chap:mainmenu}). Über einen Tab-Reiter ist der Bereich in 'Dokumente', Eigenschaften ('Properties') und Abwesenheiten ('Events') dreigeteilt (Abbildung \ref{fig:personal}). 
+
 \section{Personenbezogene Dokumente}
-Der persönliche  Bereich lässt sich über das Special-Menü erreichen (Kapitel \ref{chap:mainmenu}). Über einen Tab-Reiter ist der Bereich in 'Dokumente', Eigenschaften ('Properties') und Abwesenheiten ('Events') dreigeteilt (Abbildung \ref{fig:personal}). Dokumente werden über den Plus-Knopf hinzugefügt (Analog Kapitel \ref{chap:dokus}) und über den Minus-Knopf ggf. entfernt. Diese Dokumente sind für den Studienkoordinator über den Administrationsbereich (Kapitel \ref{chap:admin}) zugänglich, um beispielsweise die Lebensläufe aller beteiligten Personen gesammelt an den Sponsor zu senden.
+
+Dokumente können in Schulungszertifkate und Lebensläufe kategorisiert werden. Sie werden über den Plus-Knopf hinzugefügt (Analog Kapitel \ref{chap:dokus}) und über den Minus-Knopf ggf. entfernt. Diese Dokumente sind für den Studienkoordinator über den Administrationsbereich (Kapitel \ref{chap:admin}) zugänglich, um beispielsweise die Lebensläufe aller beteiligten Personen gesammelt an den Sponsor zu senden.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -428,17 +431,34 @@ Der Administrationsbereich lässt sich über das Controlling-Menü erreichen (Kapit
 \end{figure}
 
 \section{Benutzer- und Gruppenverwaltung}
-Ein neuer Benutzer wird über die Plus-Taste angelegt. In die Spalte 'ldap' muss dann das zugehörige LDAP-Kürzel eingetragen werden. In die Spalte 'name' sollte der vollständige Name (ggf. mit Titel) hinterlegt werden. Dieser wird in die vom Benutzer  generierten Briefe und Formulare automatisch eingesetzt. Die Spalte email nimmt die E-Mail Adresse auf, die ggf. für automatisierte Benachrichtigungen verwendet wird. In die Spalte 'tel' kann eine Telefonnummer hinterlegt werden. Die Rechte des Benutzers ergeben sich aus der Spalte 'level'.
-Erklärung des Rechtekonzepts.
-Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer ist mindestens einer Arbeitsgruppe zugeordnet. Nur die Studien  der zugeordneten Arbeitsgruppen sind für den angemeldeten Benutzer sichtbar. Die Benutzerverwaltung und das Rechte\-konzept sind folgendermaßen.
+Ein neuer Benutzer wird über die Plus-Taste angelegt. In die Spalte 'ldap' muss dann das zugehörige LDAP-Kürzel eingetragen werden. In die Spalte 'name' sollte der vollständige Name (ggf. mit Titel) hinterlegt werden, da dieser  in die vom Benutzer  generierten Briefe und Formulare automatisch eingesetzt wird. Die Spalte email wird ggf. für automatisierte Benachrichtigungen benötigt. In die Spalte 'tel' kann eine Telefonnummer hinterlegt werden. Die Rechte des Benutzers ergeben sich aus der Spalte 'level'. Eine Erklärung des Rechtekonzeptes findet sich in Kapitel \ref{chap:auth}.
 
-\section{Groupware features}
-\label{chap:groupware}
-Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
+Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer kann über die oberste Tabelle auf der rechten Seite des 'Personnel'-Tabs (Abbildung \ref{fig:admin})  einer oder Arbeitsgruppen zugeordnet werden. Dafür muss der Plus-Knopf der ButtonBar betätigt, und die Arbeitsgruppe in der neu erschienenen Zeile über das PopUp Menü ausgewählt werden. 
+
+Die beiden unteren Tabellen der Rechten Spalte beinhalten die jeweiligen Angaben aus dem persönlichen Bereich. Dies ist hilfreich, wenn  Lebensläufe und Zertifikate im Nachgang einer Site-Selection-Visit gebündelt an den Sponsor übermittelt werden sollen. In der untersten Spalte können die monatlichen Gehaltskosten der Personen hinterlegt werden. Diese Daten sind nur für Administratoren mit der höchsten Berechtigungsstufe sichtbar (Kapitel \ref{chap:auth}). Mit dieser Information prognostiziert das System zukünftige Kontostände des Konten über das der jeweilige Mitarbeiter bezahlt wird (die Finanz-Controlling-Funktionen des Programms werden in diesem Handbuch nicht weiter beschrieben).
+
+\section{Berechtigungskonzept}
+\label{chap:auth}
+Der Benutzer identifiziert sich nach Eingabe der Programm-URL in den Webbrowser, nach dem Neuladen der Browserseite oder nach Betätigung des Logout-Befehls (Kapitel \ref{chap:mainmenu}) über sein klinikumsweit eindeutiges LDAP-Kürzel (Abbildung \ref{fig:login}), dort password aenderung, Ein level von 3 bedeutet uneingeschränkte Rechte.
+Die Benutzerverwaltung und das Rechte\-konzept sind folgendermaßen. Nur die Studien  der zugeordneten Arbeitsgruppen sind für den angemeldeten Benutzer sichtbar. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{figs/login.png}
+\caption{Login-Bildschirm.}
+\label{fig:login}
+\end{center}
+\end{figure}
+
 
 \section{Prozedurenkatalog}
 Hauspreise, GoAE
 Verweis auf Anhang mit beispielcode. Dauer der prozedur in minuten..
+
+
+\section{Groupware features}
+\label{chap:groupware}
+Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren.
 
 \begin{appendix}
 
