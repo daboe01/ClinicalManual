@@ -96,8 +96,9 @@ Eine neue Studie wird auf den Plus-Knopf der ButtonBar unter der Studienliste an
 In der ersten Spalte des Konfigurationsfensters lassen sich unter der Überschrift 'Basic data' der Studienname und die Gruppenzugehörigkeit ändern. Darunter werden im TableView 'Status values' die Zustände verwaltet, die ein Studienteilnehmer einnehmen kann. Zu jedem Zustand wird in der Spalte 'alerting' mit einer '1' festgelegt, dass Patienten mit diesem Zustand  kontinuierlich überwacht werden sollen (z.B. Meldung aller Vorstellungen im Klinikum via E-Mail). Mit einer '0' wird diese Überwachung unterdrückt. Die Unterdrückung ist beispielsweise für 'Screen-Failures' oder nach Studienende sinnvoll, um überflüssige E-Mail-Benachrichtigungen zu vermeiden. Die  E-Mail-Adressen sind im Administrationsbereich hinterlegt (Kapitel \ref{chap:admin}).
 
 \subsection{Visiten}
+\label{chap:visitconfig}
 In der zweiten Rubrik 'Visits' werden die Studienvisiten verwaltet. Jede Visite wird mit dem Plus-Knopf generiert und muss dann geeignet benannt werden. Das jeweilige Visitenintervall wird in die Spalte 'interval' eingetragen. Die Intervalle müssen als Zahl mit Einheit eingegeben werden, z.B.  '23 days', '6 mons' oder '2 years'. Toleranzen für den Visitentermin lassen sich über die beiden  Spalten 'obergrenze' und 'untergrenze' in gleicher Weise definieren. Die jeweilige Bezugsvisite für das Visitenintervall muss über die Spalte 'reference visit' spezifiziert werden.
-Für  die  Referenzvisite (in der Regel die Studieneinschlussvisite) wird diese Angabe leer gelassen bw. lässt sich  ggf. über das Zahnrad-Menü 'unset reference visit'  leeren. Die so markierte Visite wird dadurch  zur Referenzvisite.  Die Visiten lassen sich  über die Spalte 'ordering' explizit sortieren. Diese Spalte kann mit dem Sortieren-Knopf automatisch belegt werden. In der Spalte 'reimbursement' werden die ausgehandelten Visitenvergütungen (in Euro) als einheitslose Zahlen hinterlegt. Diese sind Grundlage für die automatisierte Rechnungserstellung (Kapitel \ref{chap:rechnung}). Die  Kosten einer Visite lassen sich ggf. vorab über die Visitenprozeduren im Sinne eines Kostenvoranschlages für den Sponsor kalkulieren (s.u.). In der Spalte 'booking' lassen sich die Namen von 'DocsCal'-Sprechstunden hinterlegen, in die Patienten beim Buchen dieser Visite zusätzlich zur Studiensprechstunde gebucht werden (Beispiel: Fluoreszenangiographie). Die Spallte 'comment' nimmt Kommentare auf, die beim Buchen der Termine eingeblendet werden (Abbildung \ref{fig:visits}).
+Für  die  Referenzvisite (in der Regel die Studieneinschlussvisite) wird diese Angabe leer gelassen bw. lässt sich  ggf. über das Zahnrad-Menü 'unset reference visit'  leeren. Die so markierte Visite wird dadurch  zur Referenzvisite.  Die Visiten lassen sich  über die Spalte 'ordering' explizit sortieren. Diese Spalte kann mit dem Sortieren-Knopf automatisch belegt werden. In der Spalte 'reimbursement' werden die ausgehandelten Visitenvergütungen (in Euro) als einheitslose Zahlen hinterlegt. Diese sind Grundlage für die automatisierte Rechnungserstellung (Kapitel \ref{chap:rechnung}). Die  Kosten einer Visite lassen sich ggf. vorab über die Visitenprozeduren im Sinne eines Kostenvoranschlages für den Sponsor kalkulieren (Zahnradmenü 'Download cost calculations'). In der Spalte 'booking' lassen sich die Namen von 'DocsCal'-Sprechstunden hinterlegen, in die Patienten beim Buchen dieser Visite zusätzlich zur Studiensprechstunde gebucht werden (Beispiel: Fluoreszenangiographie). Die Spallte 'comment' nimmt Kommentare auf, die beim Buchen der Termine eingeblendet werden (Abbildung \ref{fig:visits}).
 
 Zu jeder Visite lassen sich in der Rubrik 'Procedures' des Konfigurationsfensters die zugehörigen Prozeduren hinterlegen. Prozeduren lassen sich über den Plus-Knopf hinzufügen. Der Eingabefokus springt dann auf die  neue Prozedur und diese kann über eine ComboBox spezifiziert werden.  Zu jeder Prozedur ist in der Spalte 'base costs' ein Preisvorschlag hinterlegt ('Hauskatalog', Konfiguationsbereich, Kapitel \ref{chap:admin}).  Es muss in der Spalte 'actual costs' ein konkreter Preis festgelegt werden (beispielsweise durch Übernahme des 'base costs'-Wertes). Das bisherige Preisspektrum für diese Prozedur ist in den Spalten 'min' (billigster Preis), 'avg' (durchschnittlicher Preis in allen bisherigen Studien mit dieser Prozedur) und 'max' (bislang höchster ausgehandelter Preis) sichtbar.
 Die Spalten 'ordering' und 'parameter' sind der Gestaltung des elektronischen Worksheets zu dieser Visite vorbehalten (Kapitel \ref{chap:worksheet}). % fixme: what is 'parameter' used for?
@@ -243,6 +244,8 @@ In die Felder 'IBAN' und 'BIC' lassen sich ggf. jeweils die 'alte' Kontonummer u
 
 In der Spalte 'date' findet sich das Visitendatum. In der Spalte 'add. costs' lassen sich ggf. Zusatzkosten zu dem o.g. Kilometergeld (z.B. Parkgebühren) für die jeweilige Visite geltend machen. In die Spalte 'alt. costs' kann ggf. ein alternativer Festpreis für die An- und Abreise zu dieser Visite festgelegt werden (beispielsweise Taxikosten oder Preis des Bahntickets). Die Spalte 'date reimbursed' nimmt das Abrechnungsdatum auf. Dieses merkt den Fahrtkostenbetrag schlussendlich für die spätere Rückvergütung durch den Sponsor vor und wird über die Zahnradaktion 'Als abgerechnet markieren' automatisch eingetragen. Die Spalte Kommentar nimmt ggf. einen begründen Text auf, der  auf das Anordnungsformular übernommen wird.
 
+Für alle bislang angewiesenen Fahrtkostenerstattungen lässt sich über das Zahnradmenü 'Ausgelegte Fahrtkosten abrechnen'  in der Programmrubrik 'Rechnungen' (Kapitel \ref{chap:rechnung}) eine Sammelrechnung an den Sponsor generieren.
+
 \chapter{Termine und Ereignisse}
 Das Zeitereignisse der aktuell selektierten Studie werden  unter der Registerkarte 'Zeitereignisse' verwaltet (Abbildung \ref{fig:zeit}). Ein neues Ereignis kann über den Plus-Knopf der Button-Bar  angelegt werden.   Danach muss über das Popup der Spalte 'name' die Bedeutung des Ereignisses definiert werden.  Start- und Enddatum können über einen Doppelklick in die Spalten 'start' und 'end' eingegeben oder über einen Mini-Kalender ausgewählt werden. Für Ereignisse, die noch nicht abgeschlossen bzw. erledigt sind, kann das Enddatum auch ausgelassen werden. Die Spalte 'responsible' nimmt ggf. die zuständige Person auf, und in der Spalte 'comment' kann erklärender Freitext abgelegt werden.
 
@@ -312,11 +315,13 @@ Die Spalte 'state' ermöglicht die Zuordnung eines vordefinierten Statuswertes (S
 
 \section{Visiten}
 \label{chap:visits}
-Die Visiten des aktuellen Patienten befinden sich in der Tabelle rechts daneben (Abbildung \ref{fig:visits}). Die Visiten werden mit der Neueingabe jedes Patienten automatisch angelegt. Über den Plus-Knopf können ggf. zusätzliche Visiten angelegt werden (beispielsweise im Falle ungeplanter Kontrollen). Nicht mehr benötigte Visiten können über den Minus-Knopf gelöscht werden. Über die Zahnradknopf-Aktion 'Create all visits' lassen sich  alle momentan noch fehlenden Visiten ergänzen. Dies ist beispielsweise sinnvoll, wenn seit Anlage des Patienten neue Studienvisiten in der Studienkonfigurationsmaske (Kapitel  \ref{chap:config}) eränzt wurden. Die Visite wird über die Spalte 'visit' über ein Popup-Menü spezifiziert.
+Die Visiten des aktuellen Patienten befinden sich in der Tabelle rechts daneben (Abbildung \ref{fig:visits}). Die Visiten werden mit der Neueingabe jedes Patienten automatisch angelegt. Über den Plus-Knopf können ggf. zusätzliche Visiten angelegt werden (beispielsweise im Falle ungeplanter Kontrollen). Nicht mehr benötigte Visiten können über den Minus-Knopf gelöscht werden.
+
+Über die Zahnradknopf-Aktion 'Create all visits' lassen sich  alle momentan noch fehlenden Visiten ergänzen. Dies ist beispielsweise sinnvoll, wenn seit Anlage des Patienten neue Studienvisiten in der Studienkonfigurationsmaske (Kapitel  \ref{chap:config}) eränzt wurden. Die Visite wird über die Spalte 'visit' über ein Popup-Menü spezifiziert.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.63]{figs/visits.png}
+\includegraphics[scale=0.60]{figs/visits.png}
 \caption{Visitentabelle des aktuellen Patienten. Beachte den  nicht bearbeitbaren Kommentar zur Baseline-Visite, der im Konfigurationsbereich vorgegeben wird (Kapitel \ref{chap:config}).}
 \label{fig:visits}
 \end{center}
@@ -341,7 +346,7 @@ Die Patienten können über die Tabelle rechts neben den Visiten mittels Doppelkli
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.44]{figs/buchen.png}
+\includegraphics[scale=0.5]{figs/buchen.png}
 \caption{Fenster zm Einbuchen der Visite in das 'Order entry system' des Klinikums.}
 \label{fig:buchen}
 \end{center}
@@ -353,7 +358,7 @@ Mit dem Knopf 'Buchen' erfolgt die Buchung, was  ggf. einige Sekunden dauern kan
 Alternativ können Termine auch direkt über einen Doppelklick auf das Terminfeld eingetragen werden (Abbildung \ref{fig:minical}). Nur die Termine des Visitenfensters lassen sich auswählen. Die Patienten werden im Kalender angezeigt, es erfolgt aber keine Buchung im Order entry System des Klinikums.
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.8]{figs/minical.png}
+\includegraphics[scale=0.7]{figs/minical.png}
 \caption{Direkteingabe des Visitentermins ohne Order entry Buchung im Klinikum.}
 \label{fig:minical}
 \end{center}
@@ -433,18 +438,33 @@ Der Administrationsbereich lässt sich über das Controlling-Menü erreichen (Kapit
 \section{Benutzer- und Gruppenverwaltung}
 Ein neuer Benutzer wird über die Plus-Taste angelegt. In die Spalte 'ldap' muss dann das zugehörige LDAP-Kürzel eingetragen werden. In die Spalte 'name' sollte der vollständige Name (ggf. mit Titel) hinterlegt werden, da dieser  in die vom Benutzer  generierten Briefe und Formulare automatisch eingesetzt wird. Die Spalte email wird ggf. für automatisierte Benachrichtigungen benötigt. In die Spalte 'tel' kann eine Telefonnummer hinterlegt werden. Die Rechte des Benutzers ergeben sich aus der Spalte 'level'. Eine Erklärung des Rechtekonzeptes findet sich in Kapitel \ref{chap:auth}.
 
-Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer kann über die oberste Tabelle auf der rechten Seite des 'Personnel'-Tabs (Abbildung \ref{fig:admin})  einer oder Arbeitsgruppen zugeordnet werden. Dafür muss der Plus-Knopf der ButtonBar betätigt, und die Arbeitsgruppe in der neu erschienenen Zeile über das PopUp Menü ausgewählt werden. 
+Das Programm unterstützt mehrere Arbeitsgruppen. Jeder Benutzer kann über die oberste Tabelle auf der rechten Seite des 'Personnel'-Tabs (Abbildung \ref{fig:admin})  einer oder Arbeitsgruppen zugeordnet werden. Dafür muss der Plus-Knopf der ButtonBar betätigt, und die Arbeitsgruppe in der neu erschienenen Zeile über das PopUp Menü ausgewählt werden. Dies ist aufgrund des Sicherheitskonzeptes (Kapitel \ref{chap:auth}) allerdings nur für die Gruppen möglich, die dem aktuellen Beutzer selbst zugewiesen sind. Nur ein Administrator vermag die Zuteilung zu beliebigen Gruppen. Die Verwaltung der Gruppen ist in Kapitel \ref{chap:groupware} detailliert beschrieben.
 
 Die beiden unteren Tabellen der Rechten Spalte beinhalten die jeweiligen Angaben aus dem persönlichen Bereich. Dies ist hilfreich, wenn  Lebensläufe und Zertifikate im Nachgang einer Site-Selection-Visit gebündelt an den Sponsor übermittelt werden sollen. In der untersten Spalte können die monatlichen Gehaltskosten der Personen hinterlegt werden. Diese Daten sind nur für Administratoren mit der höchsten Berechtigungsstufe sichtbar (Kapitel \ref{chap:auth}). Mit dieser Information prognostiziert das System zukünftige Kontostände des Konten über das der jeweilige Mitarbeiter bezahlt wird (die Finanz-Controlling-Funktionen des Programms werden in diesem Handbuch nicht weiter beschrieben).
 
 \section{Berechtigungskonzept}
 \label{chap:auth}
-Der Benutzer identifiziert sich nach Eingabe der Programm-URL in den Webbrowser, nach dem Neuladen der Browserseite oder nach Betätigung des Logout-Befehls (Kapitel \ref{chap:mainmenu}) über sein klinikumsweit eindeutiges LDAP-Kürzel (Abbildung \ref{fig:login}), dort password aenderung, Ein level von 3 bedeutet uneingeschränkte Rechte.
-Die Benutzerverwaltung und das Rechte\-konzept sind folgendermaßen. Nur die Studien  der zugeordneten Arbeitsgruppen sind für den angemeldeten Benutzer sichtbar. 
+Der Benutzer identifiziert sich nach Eingabe der Programm-URL über sein klinikumsweit eindeutiges LDAP-Kürzel (Abbildung \ref{fig:login}). Die Passwordüberprüfung  obliegt dem LDAP-Server des Klinikums. Das Passwort lässt sich dort über die URL \url{http://ldap}  ändern. Dem Benutzer wird dann die Berechtigungsstufe zugewiesen, die für sein LDAP-Kürzel hinterlegt ist (Kapitel \ref{chap:auth}). Die Berechtigungsstufen sind in Tabelle \ref{tab:level} zusammen gefasst.
+
+\begin{table}[htdp]
+\caption{Übersicht über die Zugriffsrechte, wie sie über der Spalte 'level' definiert werden}
+\begin{center}
+\begin{tabular}{lp{5cm}p{7cm}}
+Level & Tabellen & Rechte \\\hline
+0  & Kein Einblick in die Konten & Keine Rechteerhöhung anderer. Gruppenzuweisung anderer nur in eigene Gruppen \\
+1 & Einblick in die Kontoauszüge Kein Einblick in die Gehaltskonten.& Rechteerhöhung anderer auf Level 1 möglich, keine Änderung der Gruppeneigner\\
+2 & Noch unbesetzt & Wie Level 1\\
+3 & Keine Einschränkungen  & Rechteerhöhung und Gruppenzuweisung nicht eingeschränkt,  Änderung von Gruppeneignern\\
+\end{tabular}
+\end{center}
+\label{tab:level}
+\end{table}
+
+Zusätzlich zu dem persönlichen Berechtigungslevel ist für jede Gruppenzugehörigkeit eine weitere Berechtigungsstufe hinterlegt ('permission\_level', Abbildung \ref{fig:admin}). Diese kann nur von dem Guppeneigner oder einem Administrator erhöht werden. Diese Berechtigungsstufe ermöglicht es beispielsweise, nur ausgewählten Personen Konteneinblick für spezielle Arbeitsgruppen zu gewähren.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{figs/login.png}
+\includegraphics[scale=0.3]{figs/login.png}
 \caption{Login-Bildschirm.}
 \label{fig:login}
 \end{center}
@@ -452,12 +472,11 @@ Die Benutzerverwaltung und das Rechte\-konzept sind folgendermaßen. Nur die Stud
 
 
 \section{Prozedurenkatalog}
-Hauspreise, GoAE (Abbildung \ref{fig:procedures})
-Verweis auf Anhang mit beispielcode. Dauer der prozedur in minuten..
+Prozeduren sind ein zentrales Konzept bei der Planung von Visitenterminen und der Kollisionsüberprüfung (Kapitel \ref{chap:visits}). Alle vom Prüfzentrum angebotenen Prozeduren sind in dem Prozedurenkatalog hinterlegt  (Abbildung \ref{fig:procedures}). Neue Prozeduren werden mit dem Plus-Kopf angelegt. Eine Entfernung mit dem Minus-Knopf ist nur dann möglich, wenn die Prozedur in keiner Studie mehr referenziert wird. Der Name der Prozedur wird in der Spalte 'name' hinterlegt. In der Spalte 'worksheetname' kann ggf. ein abweichender Name für das augedruckte Worksheet hinterlegt werden (z.B. eine englische Übersetzung für internationale Projekte). Die Spalte 'extern EUR' nimmt den regulären Preis für diese Prozedur in EUR auf. Diese ist Grundlage für die Generierung eines Kostenvoranschlages (Kapitel \ref{chap:visitconfig}). Reduzierte Preise für die klinikumsinterne Verrechnung lassen sich ggf. in die Spalte 'interne EUR' dokumentieren. Der durchschnittliche Zeitbedarf der Prozedur muss in der Spalte 'procedure time' hinterlegt werden. Dieser ist Grundlage für die Berechnung von Terminkonflikten und die Berechnung der voraussichtlichen Visitendauer für die Kalenderdarstellungen. In die Spalte widgetclass ist der Name der Objective-J Klasse für das grafische Eingabeelement zum Messergebnis der Prozedur einzugeben (die Erstellung eigener Widgets ist nicht Gegenstand dieses Benutzerhandbuches).
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{figs/procedures.png}
+\includegraphics[scale=0.45]{figs/procedures.png}
 \caption{Katalog aller Prozeduren.}
 \label{fig:procedures}
 \end{center}
@@ -466,7 +485,9 @@ Verweis auf Anhang mit beispielcode. Dauer der prozedur in minuten..
 
 \section{Groupware features}
 \label{chap:groupware}
-Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwesenheit an einzelnen tagen). Download Visitconflictlist erklaeren. (Abbildung \ref{fig:groupware})
+Die Gruppenverwaltung ist über den Tab-Reiter 'Groups' im Administrationsbereich erreichbar.  (Abbildung \ref{fig:groupware}). Neue Gruppen lassen sich über den Plus-Knopf anlegen. Löschen lassen sich nur Gruppen ohne zugeordnete Mitarbeiter. Der Gruppenname wird in der Spalte 'name' erfasst. Die Telefonnummer (Spalte 'telephone') erscheint auf dem Terminübersichtsformular, das den Studienteilnehmern ausgehändigt wird (Kapitel \ref{chap:visits}). Die Spalte 'websitename' nimmt Textmaterial auf, der in die automatisierte Rekrutierungstabelle auf der Website  (\url{http://www.uniklinik-freiburg.de/augenklinik/forschung-studien/klinische-studien.html}) für die jeweilige Arbeitsgruppe eingeblendet wird. Die Spalte 'sprechstunde' nimmt den Namen der DocsCal-Sprechstunde für die Order-Entry Buchungen im Terminsystem des Klinikums auf. In der Spalte 'Owner' wird der Gruppeneigner festgelegt (Kapitel \ref{chap:auth}).
+
+Über die Tabelle 'Meetings' lassen sich Termine für die Arbeitsgruppe einrichten, die im Team-Kalender jedes Gruppenmitgliedes unabhängig von einer konkreten Studie eingeblendet werden (Kapitel \ref{chap:calendar}). Über das Zahnradmenü ('Send inivitations') kann eine Outlook Exchange/ iCAL Kompatible E-Mail Einladung ausgesendet werden. Ist die Tabelle 'Meeting attendees' leer, erfolgt die Aussendung an alle Gruppenmitglieder. Ansonsten wird die Email nur an die hier explizit gelisteten Personen versendet. Der Reload-Knopf prüft die von den Kalender-Programmen (z.B. Microsoft Outlook und Apple iCal) automatisch generierten Annahme bzw. Ablehungsnachrichten und aktualisiert dann die 'Meeting attendees'  entsprechend. Über die Spalte 'Group members' können Mitglieder aus der Gruppe entfernt oder hinzugefügt werden, soweit es die Berechtigungen des Benutzers zulassen (Kapitel \ref{chap:auth}).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -478,50 +499,21 @@ Wie kommt man hin, wie trägt man termine ein, wie trägt man teilzeit ein (abwese
 
 \begin{appendix}
 
-\chapter{Erstellung eigener Widgets}
-Klassenhierachie, SimpleWidget vs. Cappusance, Timer, Stopwatch.
-
-\begin{lstlisting}[caption=GUI part of  minimalistic widget.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
-<?xml version="1.0"?>
-<!DOCTYPE gsmarkup>
-<gsmarkup>
-  <objects>
-   <window visible="NO">
-     <hbox id="widgets">
-           <label valign="center"> Haben sich SAEs ereignet?</label>
-           <popUpButton width="80" valueBinding="#CPOwner.value2">
-                <popUpButtonItem title="Ja" tag="1"/>
-                <popUpButtonItem title="Nein" tag="0"/>
-           </popUpButton>
-          <label valign="center"> Zeit </label>
-          <textField valueBinding="#CPOwner.value1" width="120" halign="min"/>
-          <button title="Notieren" target="#CPOwner" action="takeTime:"/>
-    </hbox>
-   </window>
-  </objects>
-  <connectors>
-     <outlet source="#CPOwner" target="widgets" label="_myView"/>
-  </connectors>
-</gsmarkup>}
-\end{lstlisting}
-
-\begin{lstlisting}[caption=Corresponding LaTeX template.,  label= lst:form, basicstyle={\small\ttfamily}, numbers=left]
-{{\bf<value2>} (0=Nein, 1=Ja). Beantwortet: {\bf<value1>}}
-\end{lstlisting}
-
-\chapter{Installationsanleitung}
-Das Programm kann  über folgende GitHub-Seite bezogen werden: 
-\url{https://github.com/daboe01/Clinical}. Dort findet sich auch eine kurze Installationsaweisung.
+\chapter{Programmbezug und Installation}
+Das Programm kann unter Ausschluss von jedweder Haftung und Gewährleistung über folgende GitHub-Seite bezogen werden: 
+\url{https://github.com/daboe01/Clinical}. Dort findet sich  eine kurze Installationsaweisung.
 
 \chapter{Danksagungen}
-
+Das Projekt wäre nicht durchführbar gewesen ohne:
 \begin{itemize}
-\item Cappuccino Project
-\item postgres
-\item Mojolicious
-\item FontAwesome
-\item Die zahlreichen beta-Testerinnen
+\item Das Team des Cappuccino Projekts: \url{www.cappuccino-project.org}
+\item Die Ersteller der Postgresdatenbank: \url{www.postgres.org}
+\item Die Macher von Mojolicious: \url{http://mojolicio.us/}
+\item Die Grafiker von FontAwesome \url{http://fortawesome.github.io/Font-Awesome}
+\item Die unermüdlichen Ideengeberinnen und Beta-Testerinnen \url{http://www.uniklinik-freiburg.de/augenklinik/forschung-studien/klinische-studien.html}
 \end{itemize}
+
+\noindent Vielen Dank an alle!
 
 \end{appendix}
 
